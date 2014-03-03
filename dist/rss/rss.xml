@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Solo</title>
+    <link>http://www.useLessblog.cn</link>
+    <description>TooBug - 专注前端开发</description>
+    <lastBuildDate>Wed, 27 Feb 2013 13:25:36 +0800</lastBuildDate>
+    <generator>Solo 2.0</generator>
+    <item>
+      <title>测试文件 - SOLO 2.0</title>
+      <link>http://www.useLessblog.cn/article/demo.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/demo.html</guid>
+      <pubDate>Wed, 27 Feb 2013 13:25:36 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>这是一篇用来测试TooSolo 2.0的文章。</p>
+
+<h2>Markdown</h2>
+
+<p>TooSolo使用Markdown语法进行写作，你可以选用任何编辑器进行编写：</p>
+
+<ul>
+<li>Mou</li>
+<li>MarkdownPad</li>
+<li>Made</li>
+<li>And so on ...</li>
+</ul>
+
+<p>还可以标记“更多”哦……</p>
+
+<p>这里的内容只在文章中才会出现啦，是不是很方便呢？</p>
+        ]]>
+      </description>
+    </item>
+    <item>
+      <title>测试文件 - SOLO 2.0</title>
+      <link>http://www.useLessblog.cn/article/demo_tmpl.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/demo_tmpl.html</guid>
+      <pubDate>Wed, 27 Feb 2013 13:25:36 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>测试段落测试段落测试段落，测试段落测试段落测。试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测？试段落、测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落。</p>
+
+<p>测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落</p>
+
+<p>测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落</p>
+
+<p>测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落</p>
+
+<p>测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落测试段落</p>
+        ]]>
+      </description>
+    </item>
+    <item>
+      <title>测试兼容farbox</title>
+      <link>http://www.useLessblog.cn/article/test-for-farbox.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/test-for-farbox.html</guid>
+      <pubDate>Thu, 24 Jan 2013 12:34:36 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>这篇文章的源文件格式兼容<a href="http://farbox.com">FarBox</a>。</p>
+
+<p>这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容</p>
+
+<p>这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容</p>
+        ]]>
+      </description>
+    </item>
+  </channel>
+</rss>
