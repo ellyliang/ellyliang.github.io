@@ -103,8 +103,6 @@ header nav ul li a:hover {
 	text-align: center;
 }
 #sidebar p.avatar img{
-	width: 150px;
-	height: 150px;
 	border:1px solid #FF3399;
 	padding:1px;
 	border-radius: 300px;
