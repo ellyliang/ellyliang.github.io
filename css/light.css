@@ -411,3 +411,6 @@ header nav ul li a:hover {
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
 }
+#ds-reset{
+	padding:10px;
+}
