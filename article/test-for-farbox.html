@@ -23,37 +23,33 @@
         </ul>
       </nav>
     </header>
-    <section id="sidebar">
-      <div class="sideTitle">作者简介</div>
-      <div id="intro" class="sideContent">
-        <p class="avatar"><img src="/images/me.jpg" alt="博主照片"></p>
-        <p><strong>useLess</strong>，前端女程序媛，欢迎访问我的博客，更欢迎一起交流前端知识。</p>
-        <p><a href="http://weibo.com/Lcm_成妹" target="_blank"><img src="http://www.sinaimg.cn/blog/developer/wiki/32x32.png"></a><a href="http://t.qq.com/Lcm_成妹" target="_blank"><img src="http://mat1.gtimg.com/app/opent/images/wiki/resource/weiboicon32.png"></a><a href="https://github.com/ellyliang" target="_blank"><img src="http://cdn-img.easyicon.cn/png/10981/1098194.gif"></a></p>
-      </div>
-    </section>
+  </body>
+  <article id="container">
     <section id="content">
       <div id="article">
-        <h1>测试兼容farbox<em class="pubDate">2013-01-24 12:34:36</em></h1><p>这篇文章的源文件格式兼容<a href="http://farbox.com">FarBox</a>。</p>
+        <div id="content-child">
+          <h1><span>测试兼容farbox</span><em class="pubDate">2013-01-24 12:34:36</em></h1><p>这篇文章的源文件格式兼容<a href="http://farbox.com">FarBox</a>。</p>
 
 <p>这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容</p>
 
 <p>这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容这篇文章的源文件格式兼容</p>
-      </div><!--	
-      <div id="disqus_thread"></div>
+        </div>
+      </div>
+      <div class="ds-thread"></div>
       <script>
-        var disqus_shortname = 'toobug';
+        var duoshuoQuery = {short_name:"useless"};
         (function() {
-         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = 'http://static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
       </script>
-      <noscript>
-        <Please>enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></Please>
-      </noscript>-->
+      <!--include ./include/sidebar-->
     </section>
     <div id="foot">
       <p>Powered by <a href="https://github.com/TooBug/Toosolo" target="_blank">Solo</a></p>
     </div>
-  </body>
+  </article>
 </html>
