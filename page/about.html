@@ -23,43 +23,58 @@
         </ul>
       </nav>
     </header>
-    <section id="sidebar">
-      <div class="sideTitle">作者简介</div>
-      <div id="intro" class="sideContent">
-        <p class="avatar"><img src="/images/me.jpg" alt="博主照片"></p>
-        <p><strong>useLess</strong>，前端女程序媛，欢迎访问我的博客，更欢迎一起交流前端知识。</p>
-        <p><a href="http://weibo.com/Lcm_成妹" target="_blank"><img src="http://www.sinaimg.cn/blog/developer/wiki/32x32.png"></a><a href="http://t.qq.com/Lcm_成妹" target="_blank"><img src="http://mat1.gtimg.com/app/opent/images/wiki/resource/weiboicon32.png"></a><a href="https://github.com/ellyliang" target="_blank"><img src="http://cdn-img.easyicon.cn/png/10981/1098194.gif"></a></p>
+    <article id="container">
+      <div id="content-child">
+        <section id="content">
+          <div id="article">
+            <h1><span class="about-title">ABOUT 简介</span></h1><h3>useLess，前端女程序媛，欢迎访问我的博客，更欢迎一起交流前端知识。</h3>
+
+<pre><code>var Intro = {
+    name : 'useLess',
+    age : 'secret',
+    sex : 'female',
+    Worked : 'JZ',
+    Contact : {
+        sinaWeibo : 'Lcm_成妹'，
+        QQWeibo : 'Lcm_成妹',
+        weixin : 'Lcm',
+        QQ : 1795515073,
+        gitHub : 'https://github.com/ellyliang',
+        more : 'twitter......'
+        },
+    Interest : ['tv','coding','music','and so on'],
+    Motto : '没有做不到的事，只有迈不出的坎'
+};
+</code></pre>
+
+<h3>值得你关注的博客</h3>
+
+<blockquote>
+  <ul>
+  <li><a href="http://www.toobug.net/">Toobug</a></li>
+  <li><a href="http://www.basecss.net/">bacecss</a></li>
+  <li><a href="http://miyuki.42code.com/">张小雪</a></li>
+  <li><a href="http://littledu.net/">小杜</a></li>
+  </ul>
+</blockquote>
+
+<h3>链接</h3>
+
+<blockquote>
+  <ul>
+  <li><a href="http://www.bootcss.com/">Bootstrap中文网</a></li>
+  <li><a href="http://www.lesscss.net">LESS中国官网</a></li>
+  <li><a href="http://www.gruntjs.org/article/home.html">gruntjs中文社区</a></li>
+  </ul>
+</blockquote>
+
+<h3>说明</h3>
+
+<p>哈哈，本博客刚建，还有一些问题，后续有时间再完善。</p>
+          </div>
+        </section>
       </div>
-    </section>
-    <section id="content">
-      <div id="article">
-        <h1>ABOUT 简介<em class="pubDate">2013-02-27 13:25:36</em></h1><h2>solo 是一个由Node构建的静态博客</h2>
-
-<ul>
-<li>这个静态博客是用markdown来写文章，通过皮肤模板可以build出html页面。</li>
-<li>你可以将他提交至Github Pages等任何网站空间。</li>
-<li>示例:<a href="http://solo.toobug.net">http://solo.toobug.net</a></li>
-</ul>
-
-<h2>2.0 预览版特性</h2>
-
-<ul>
-<li>程序、源文件、构建结果完全分离，托管时只需要上传构建结果即可</li>
-<li>全插件构架，可以任意扩展你需要的功能（标签、分类、RSS等等）</li>
-</ul>
-      </div>
-      <div class="ds-thread"></div>
-      <script>
-        var duoshuoQuery = {short_name:"useless"};
-        (function() {
-         var ds = document.createElement('script');
-         ds.type = 'text/javascript';ds.async = true;
-         ds.src = 'http://static.duoshuo.com/embed.js';
-         ds.charset = 'UTF-8';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-      </script>
-    </section>
+    </article>
     <div id="foot">
       <p>Powered by <a href="https://github.com/TooBug/Toosolo" target="_blank">Solo</a></p>
     </div>
