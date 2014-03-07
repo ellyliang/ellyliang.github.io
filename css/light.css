@@ -100,8 +100,8 @@ header nav ul li a:hover {
 	text-align: center;
 }
 #sidebar p.avatar img{
-	width: 150px;
-	height: 150px;
+	width:150px;
+	height:150px;
 	border:1px solid #FF3399;
 	padding:1px;
 	border-radius: 300px;
@@ -399,10 +399,14 @@ header nav ul li a:hover {
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
 }
+<<<<<<< HEAD
 #content-child{
 	margin-top: 50px;
 }
 #content-child .about-title{
+=======
+#content-child span{
+>>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
 	color: #fff;
 	padding: 6px 10px;
 	background: #FF3399;
@@ -413,4 +417,11 @@ header nav ul li a:hover {
 	-webkit-box-shadow: 1px 1px 3px #aaa;
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
+<<<<<<< HEAD
 }
+=======
+}
+#ds-reset{
+	padding:10px;
+}
+>>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
