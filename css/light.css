@@ -400,10 +400,14 @@ header nav ul li a:hover {
 	box-shadow: 1px 1px 3px #aaa;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 #content-child{
 	margin-top: 50px;
 }
 #content-child .about-title{
+=======
+#content-child span{
+>>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
 =======
 #content-child span{
 >>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
@@ -418,10 +422,16 @@ header nav ul li a:hover {
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
 }
 #ds-reset{
 	padding:10px;
 }
+<<<<<<< HEAD
+>>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
+=======
 >>>>>>> 06728ca217f40b14144216e2b48c670a991f7eb1
