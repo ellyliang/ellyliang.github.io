@@ -100,8 +100,8 @@ header nav ul li a:hover {
 	text-align: center;
 }
 #sidebar p.avatar img{
-	width: 150px;
-	height: 150px;
+	width:150px;
+	height:150px;
 	border:1px solid #FF3399;
 	padding:1px;
 	border-radius: 300px;
@@ -406,9 +406,19 @@ header nav ul li a:hover {
 }
 .ds-thread{
 	background: #f7f7f7;
+<<<<<<< HEAD
 	padding: 10px;
+=======
+>>>>>>> 2f5e3ace7797d250ad20a5569abbb0171c0b8349
 	border: 10px solid #fff;
 	-webkit-box-shadow: 1px 1px 3px #aaa;
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
+<<<<<<< HEAD
 }
+=======
+}
+#ds-reset{
+	padding:10px;
+}
+>>>>>>> 2f5e3ace7797d250ad20a5569abbb0171c0b8349
