@@ -122,7 +122,7 @@
 
 <blockquote>
   <ul>
-  <li>页面上的图片放在/source/images目录下</li>
+  <li>页面上的图片放在/source/global/images目录下</li>
   <li>图片要推到外网之后才能看到，这个不用担心。</li>
   </ul>
 </blockquote>
