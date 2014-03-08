@@ -407,6 +407,14 @@ header nav ul li a:hover {
 	padding: 6px 10px;
 	background: #FF3399;
 }
+#content-child img{
+	max-width: 79em;
+	width: 96%;
+	border: 0.7em solid #FF3399;
+	-moz-border-radius: 0.7em;
+	-webkit-border-radius: 0.7em;
+	border-radius: 0.7em;
+}
 .ds-thread{
 	background: #f7f7f7;
 	border: 10px solid #fff;
