@@ -100,8 +100,8 @@ header nav ul li a:hover {
 	text-align: center;
 }
 #sidebar p.avatar img{
-	width:150px;
-	height:150px;
+	width: 150px;
+	height: 150px;
 	border:1px solid #FF3399;
 	padding:1px;
 	border-radius: 300px;
@@ -147,7 +147,7 @@ header nav ul li a:hover {
 	background: #CCC;
 	margin: 20px 0;
 	padding: 0 20px;
-	border-left: 2px solid #490;
+	border-left: 2px solid #FF3399;
 }
 #content #article .articlemore {
 	text-align: right;
@@ -399,7 +399,10 @@ header nav ul li a:hover {
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
 }
-#content-child span{
+#content-child{
+	margin-top: 50px;
+}
+#content-child .about-title{
 	color: #fff;
 	padding: 6px 10px;
 	background: #FF3399;
@@ -410,7 +413,4 @@ header nav ul li a:hover {
 	-webkit-box-shadow: 1px 1px 3px #aaa;
 	-moz-box-shadow: 1px 1px 3px #aaa;
 	box-shadow: 1px 1px 3px #aaa;
-}
-#ds-reset{
-	padding:10px;
 }
