@@ -15,7 +15,7 @@
         <![CDATA[
         <p>在创建博客之前，你是不是忘了一件事呢？是的，你需要一个域名。你是不是现在立刻去万网之类的网站购买域名？先不要着急，这里提供两种方法给你选择，一种是你可以买了域名之后绑定到github page上面，就不需要去备案啥的。另一种是直接用github page上面的域名，例如：username.github.io。是不是不知道怎么操作，没事，你可以看 <a href="http://littledu.net/article/how-to-use-github.html">这里</a>。另外，建议你在买域名之前先看<a href="http://www.zhihu.com/question/20556410">这篇文章</a>。</p>
 
-<p>言归正传，首先你先到<a href="https://github.com/TooBug/TooSolo">这里</a>了解Toosolo。是的，他里面也教程，但是我还是要写这篇文章，至于问为什么，我也不知道。我只知道我写的唯一优势就是配了图说明。废话不多说，马上开始学习：</p>
+<p>言归正传，首先你先到<a href="https://github.com/TooBug/TooSolo">这里</a>了解Toosolo。是的，他里面也有教程，但是我还是要写这篇文章，至于问为什么，我也不知道。我只知道我写的唯一优势就是配了图说明。废话不多说，马上开始学习：</p>
 
 <p>第一步：到<a href="http://nodejs.org/">node官网</a>下载node,然后安装。你是不是想问，为什么要安装node,很明显，你没有认真看github里面的内容。答案就是：<strong>Toosolo 是一个由Node构建的静态博客</strong>(PS：这一步就不配图详说了，有人跟我说，会装QQ的人都会装node。T^T)</p>
 
