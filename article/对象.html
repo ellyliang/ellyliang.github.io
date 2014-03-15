@@ -28,9 +28,7 @@
     <section id="content">
       <div id="article">
         <div id="content-child">
-          <h1><span class="about-title">Javascript 对象</span><em class="pubDate">2014-03-15 00:00:00</em></h1><h1>对象</h1>
-
-<blockquote>
+          <h1><span class="about-title">Javascript 对象</span><em class="pubDate">2014-03-15 00:00:00</em></h1><blockquote>
   <ul>
   <li>JS简单类型：数字、字符串、布尔值（true 和 false）、null值和undefined值。</li>
   <li>其他所有值都是对象。</li>
@@ -51,7 +49,7 @@
 
 <p>例如：</p>
 
-<p>```js
+<p>```
   var empty_obj = {};</p>
 
 <p>var stooge = {
@@ -69,7 +67,7 @@
   </ul>
 </blockquote>
 
-<p><code>js
+<p><code>
     var flight = {
         airline: 'Oceanic',
         number: 815,
@@ -98,7 +96,7 @@
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     stooge['first_name']; //cm
     flight.arrival.city; //SZ
 </code></p>
@@ -124,7 +122,7 @@
 
 <p>例如：</p>
 
-<p>```js
+<p>```
     var middle = stooge['middle_name'] || '(none)';
     middle; //"(none)"</p>
 
@@ -140,7 +138,7 @@ status;   //unknown
   </ul>
 </blockquote>
 
-<p><code>js
+<p><code>
     stooge.address; //undefined
     stooge.address.language; //throw "TypeError"
     stooge.address &amp;&amp; stooge.address.language; //undefined
@@ -157,7 +155,7 @@ status;   //unknown
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     stooge.first_name = "elly";
     stooge.first_name; //"elly"
 </code></p>
@@ -170,7 +168,7 @@ status;   //unknown
 
 <p>例如：</p>
 
-<p>```js
+<p>```
     empty<em>obj.nickname = 'John';
     empty</em>obj.nickname; //"John"</p>
 
@@ -192,7 +190,7 @@ flight.equipment.model;  //"MH370"
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     var x = empty_obj;  //将x赋值给empty_obj对象
     x.hobby = 'movie';
     var hob = empty_obj.hobby; //"movie"
@@ -229,7 +227,7 @@ flight.equipment.model;  //"MH370"
 
 <p>例如：</p>
 
-<p>```js
+<p>```
     var stooge = {
         nickname: 'elly'
    };</p>
@@ -264,7 +262,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     stooge.profession = 'actor';
     another_stooge.profession; //'actor'
 </code></p>
@@ -280,7 +278,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     typeof stooge.profession; //'string'
 </code></p>
 
@@ -292,7 +290,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     typeof flight.toString; //'function'
     typeof flight.constructor; //'function'
 </code></p>
@@ -307,7 +305,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>js
+<p><code>
     flight.hasOwnProperty('number');  //true
     flight.hasOwnProperty('constructor'); //false
 </code></p>
@@ -324,7 +322,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如： </p>
 
-<p><code>js
+<p><code>
     var name;
     for(name in another_stooge){
         if(typeof another_stooge[name] !== 'function'){
@@ -342,7 +340,7 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p>```js
+<p>```
     var i;
     var properties = {
         'first_name',
@@ -370,7 +368,7 @@ for(i = 0; i &lt; properties.length; i += 1){
   </ul>
 </blockquote>
 
-<p><code>js
+<p><code>
     another_stooge.nickname; //'cm' 
     delete another_stooge.nickname;
     another_stooge.nickname; //暴露出原型中nickname属性。'elly'
@@ -387,7 +385,7 @@ for(i = 0; i &lt; properties.length; i += 1){
 
 <p>例如：</p>
 
-<p>```js
+<p>```
     var MYAPP = {};
     //此时，全局变量已经变成了你的容器
     MYAPP.stooge = {
