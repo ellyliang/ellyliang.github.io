@@ -28,14 +28,10 @@
     <section id="content">
       <div id="article">
         <div id="content-child">
-          <h1><span class="about-title">Javascript 对象</span><em class="pubDate">2014-03-15 00:00:00</em></h1><blockquote>
-  <ul>
-  <li>JS简单类型：数字、字符串、布尔值（true 和 false）、null值和undefined值。</li>
-  <li>其他所有值都是对象。</li>
-  <li>数组是对象，函数事对象，正则表达式是对象，当然，对象也是对象。</li>
-  <li>Prototype(原型链)：允许对象继承另一个对象的属性。正确的使用它，能减少对象初始化时消耗的时间和内存。</li>
-  </ul>
-</blockquote>
+          <h1><span class="about-title">Javascript 对象</span><em class="pubDate">2014-03-15 00:00:00</em></h1><p>JS简单类型：数字、字符串、布尔值（true 和 false）、null值和undefined值。
+ 其他所有值都是对象。
+ 数组是对象，函数事对象，正则表达式是对象，当然，对象也是对象。
+ Prototype(原型链)：允许对象继承另一个对象的属性。正确的使用它，能减少对象初始化时消耗的时间和内存。</p>
 
 <h3>对象字面量</h3>
 
@@ -49,14 +45,13 @@
 
 <p>例如：</p>
 
-<p>```
-  var empty_obj = {};</p>
+<pre><code>var empty_obj = {};
 
-<p>var stooge = {
-    'first<em>name' : 'cm',
-    'last</em>name' : 'liang'
-  };
-```</p>
+var stooge = {
+    'first_name' : 'cm',
+    'last_name' : 'liang'
+};
+</code></pre>
 
 <blockquote>
   <ul>
@@ -67,22 +62,21 @@
   </ul>
 </blockquote>
 
-<p><code>
-    var flight = {
-        airline: 'Oceanic',
-        number: 815,
-        departure: {
-            IATA: 'SYD',
-            time: '2014-01-01',
-            city: 'GZ'
-        },
-        arrival: {
-            IATA: 'LAX',
-            time: '2013-01-01',
-            city: 'SZ'
-        }
-    };
-</code></p>
+<pre><code>var flight = {
+    airline: 'Oceanic',
+    number: 815,
+    departure: {
+        IATA: 'SYD',
+        time: '2014-01-01',
+        city: 'GZ'
+    },
+    arrival: {
+        IATA: 'LAX',
+        time: '2013-01-01',
+        city: 'SZ'
+    }
+};
+</code></pre>
 
 <h3>检索</h3>
 
@@ -96,10 +90,9 @@
 
 <p>例如：</p>
 
-<p><code>
-    stooge['first_name']; //cm
-    flight.arrival.city; //SZ
-</code></p>
+<pre><code>stooge['first_name']; //cm
+flight.arrival.city; //SZ
+</code></pre>
 
 <blockquote>
   <ul>
@@ -109,10 +102,9 @@
 
 <p>例如：</p>
 
-<p><code>js
-    stooge['middle_name']; //undefined
-    flight.goWhere; //undefined
-</code></p>
+<pre><code>stooge['middle_name']; //undefined
+flight.goWhere; //undefined
+</code></pre>
 
 <blockquote>
   <ul>
@@ -122,15 +114,12 @@
 
 <p>例如：</p>
 
-<p>```
-    var middle = stooge['middle_name'] || '(none)';
-    middle; //"(none)"</p>
+<pre><code>var middle = stooge['middle_name'] || '(none)';
+middle; //"(none)"
 
-<pre><code>var status = flight.status || 'unknown';
+var status = flight.status || 'unknown';
 status;   //unknown
 </code></pre>
-
-<p>```</p>
 
 <blockquote>
   <ul>
@@ -138,11 +127,10 @@ status;   //unknown
   </ul>
 </blockquote>
 
-<p><code>
-    stooge.address; //undefined
-    stooge.address.language; //throw "TypeError"
-    stooge.address &amp;&amp; stooge.address.language; //undefined
-</code></p>
+<pre><code>stooge.address; //undefined
+stooge.address.language; //throw "TypeError"
+stooge.address &amp;&amp; stooge.address.language; //undefined
+</code></pre>
 
 <h3>更新</h3>
 
@@ -155,10 +143,9 @@ status;   //unknown
 
 <p>例如：</p>
 
-<p><code>
-    stooge.first_name = "elly";
-    stooge.first_name; //"elly"
-</code></p>
+<pre><code>stooge.first_name = "elly";
+stooge.first_name; //"elly"
+</code></pre>
 
 <blockquote>
   <ul>
@@ -168,17 +155,14 @@ status;   //unknown
 
 <p>例如：</p>
 
-<p>```
-    empty<em>obj.nickname = 'John';
-    empty</em>obj.nickname; //"John"</p>
+<pre><code>empty_obj.nickname = 'John';
+empty_obj.nickname; //"John"
 
-<pre><code>flight.equipment = {
+flight.equipment = {
     model: 'MH370'
 };
 flight.equipment.model;  //"MH370"
 </code></pre>
-
-<p>```</p>
 
 <h3>引用</h3>
 
@@ -190,12 +174,11 @@ flight.equipment.model;  //"MH370"
 
 <p>例如：</p>
 
-<p><code>
-    var x = empty_obj;  //将x赋值给empty_obj对象
-    x.hobby = 'movie';
-    var hob = empty_obj.hobby; //"movie"
-    //or var hob = x.hobby; //"movie"
-</code></p>
+<pre><code>var x = empty_obj;  //将x赋值给empty_obj对象
+x.hobby = 'movie';
+var hob = empty_obj.hobby; //"movie"
+//or var hob = x.hobby; //"movie"
+</code></pre>
 
 <blockquote>
   <ul>
@@ -203,16 +186,14 @@ flight.equipment.model;  //"MH370"
   </ul>
 </blockquote>
 
-<p>例如：
-```js
-    var a={},b={},c={};
-    //a、b和c都引用一个不同的空对象</p>
+<p>例如：</p>
 
-<pre><code>a = b = c = {};
+<pre><code>var a={},b={},c={};
+//a、b和c都引用一个不同的空对象
+
+a = b = c = {};
 //a、b和c都是引用同一个空对象
 </code></pre>
-
-<p>```</p>
 
 <h3>原型</h3>
 
@@ -227,10 +208,11 @@ flight.equipment.model;  //"MH370"
 
 <p>例如：</p>
 
-<p>```
-    var stooge = {
-        nickname: 'elly'
-   };</p>
+<pre><code>var stooge = {
+    nickname: 'elly'
+</code></pre>
+
+<p>};</p>
 
 <pre><code>if(typeof Object.beget !== 'function'){
     Object.beget = function(o){
@@ -246,26 +228,50 @@ stooge.nickname; //"elly"
 another_stooge.nickname;  //"cm"
 </code></pre>
 
-<p>```</p>
-
 <blockquote>
   <ul>
   <li>原型连接只有在检索值的时候才被用到。</li>
   <li>如果我们尝试去获取对象的某个属性值，且该对象没有此属性名，那么JS会尝试从原型对象中获取属性值。</li>
   <li>如果那个原型对象也没有该属性，那么再从它的原型中寻找，依次类推，知道该过程最后到达终点Object.prototype。</li>
   <li>如果想要的属性完全不存在于原型链中，那么结果就是undefined。</li>
-  <li><p>这个过程称为<strong>委托</strong></p></li>
-  <li><p>原型关系是一种动态的关系。</p></li>
+  <li>这个过程称为<strong>委托</strong></li>
+  </ul>
+</blockquote>
+
+<p>上面那5句话第一次接触原型的朋友，应该不好理解，下面给个例子参考(PS:也是别人给我解释的，谢谢@basecss)：</p>
+
+<pre><code>function Person(name,age) {
+    this.name = name;
+    this.age = age;
+    //......
+}
+var useLess = new Person('useLess', 23);
+
+// 注意下面
+useLess.job; // undefined
+// 首先 useLess 自身没有job属性
+// 那就到 Person.prototype 中看看，还是没有
+// 再到 Object 原型中找，还是没有
+// 返回 undefined
+useLess.toString(); // ['object Object']
+// useLess 自己没有 toString() 方法
+// 找它的原型 Person.prototype ，木有
+
+最后到 Object.prototype 找到 toString() 方法
+</code></pre>
+
+<blockquote>
+  <ul>
+  <li>原型关系是一种动态的关系。</li>
   <li>如果我们添加一个新的属性在原型中，该属性会立即对所有基于该原型创建的对象可见。</li>
   </ul>
 </blockquote>
 
 <p>例如：</p>
 
-<p><code>
-    stooge.profession = 'actor';
-    another_stooge.profession; //'actor'
-</code></p>
+<pre><code>stooge.profession = 'actor';
+another_stooge.profession; //'actor'
+</code></pre>
 
 <h3>反射</h3>
 
@@ -278,9 +284,8 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>
-    typeof stooge.profession; //'string'
-</code></p>
+<pre><code>typeof stooge.profession; //'string'
+</code></pre>
 
 <blockquote>
   <ul>
@@ -290,10 +295,9 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>
-    typeof flight.toString; //'function'
-    typeof flight.constructor; //'function'
-</code></p>
+<pre><code>typeof flight.toString; //'function'
+typeof flight.constructor; //'function'
+</code></pre>
 
 <blockquote>
   <ul>
@@ -305,10 +309,9 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p><code>
-    flight.hasOwnProperty('number');  //true
-    flight.hasOwnProperty('constructor'); //false
-</code></p>
+<pre><code>flight.hasOwnProperty('number');  //true
+flight.hasOwnProperty('constructor'); //false
+</code></pre>
 
 <h3>枚举(for in)</h3>
 
@@ -322,14 +325,13 @@ another_stooge.nickname;  //"cm"
 
 <p>例如： </p>
 
-<p><code>
-    var name;
-    for(name in another_stooge){
-        if(typeof another_stooge[name] !== 'function'){
-            document.writeln(name + ':' + another_stooge[name]);
-        }
+<pre><code>var name;
+for(name in another_stooge){
+    if(typeof another_stooge[name] !== 'function'){
+        document.writeln(name + ':' + another_stooge[name]);
     }
-</code></p>
+}
+</code></pre>
 
 <blockquote>
   <ul>
@@ -340,19 +342,16 @@ another_stooge.nickname;  //"cm"
 
 <p>例如：</p>
 
-<p>```
-    var i;
-    var properties = {
-        'first_name',
-        'profession'</p>
+<pre><code>var i;
+var properties = {
+    'first_name',
+    'profession'
 
-<pre><code>};
+};
 for(i = 0; i &lt; properties.length; i += 1){
     document.writeln(properties[i] + ':' + another_stooge[properties[i]]);
 }
 </code></pre>
-
-<p>```</p>
 
 <blockquote>
   <ul>
@@ -368,11 +367,10 @@ for(i = 0; i &lt; properties.length; i += 1){
   </ul>
 </blockquote>
 
-<p><code>
-    another_stooge.nickname; //'cm' 
-    delete another_stooge.nickname;
-    another_stooge.nickname; //暴露出原型中nickname属性。'elly'
-</code></p>
+<pre><code>another_stooge.nickname; //'cm' 
+delete another_stooge.nickname;
+another_stooge.nickname; //暴露出原型中nickname属性。'elly'
+</code></pre>
 
 <h3>减少全局变量污染</h3>
 
@@ -385,20 +383,17 @@ for(i = 0; i &lt; properties.length; i += 1){
 
 <p>例如：</p>
 
-<p>```
-    var MYAPP = {};
-    //此时，全局变量已经变成了你的容器
-    MYAPP.stooge = {
-        'first<em>name' : 'cm',
-        'last</em>name' : 'liang'
-    };</p>
+<pre><code>var MYAPP = {};
+//此时，全局变量已经变成了你的容器
+MYAPP.stooge = {
+    'first_name' : 'cm',
+    'last_name' : 'liang'
+};
 
-<pre><code>MYAPP.flight = {
+MYAPP.flight = {
     'airline' : 'Oceanic',
 };
 </code></pre>
-
-<p>```</p>
 
 <blockquote>
   <ul>
