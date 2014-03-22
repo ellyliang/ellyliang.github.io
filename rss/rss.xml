@@ -7,7 +7,7 @@
     <lastBuildDate>Sat, 22 Mar 2014 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
     <item>
-      <title>Javascript 对象</title>
+      <title>《JS语言精粹》笔记之函数第一部分</title>
       <link>http://www.useLessblog.cn/article/func.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/func.html</guid>
       <pubDate>Sat, 22 Mar 2014 00:00:00 +0800</pubDate>
@@ -158,7 +158,7 @@ var status = Quo.prototype.get_status.apply(statusObject); //'A-OK'
       </description>
     </item>
     <item>
-      <title>Javascript 对象</title>
+      <title>《JS语言精粹》笔记之对象</title>
       <link>http://www.useLessblog.cn/article/object.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/object.html</guid>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0800</pubDate>
