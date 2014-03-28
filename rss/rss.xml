@@ -31,8 +31,6 @@
 
 <p><img src="/images/grunt1.jpg" alt="Grunt" title="" />;</p>
 
-<p>如果你不想全局安装grunt cli的话，看<a href="http://www.basecss.net/article/using-grunt-in-local.html">这里</a>。</p>
-
 <h3>第二步：自动创建package.json。(PS:你也可以手动创建，参考<a href="http://www.gruntjs.org/docs/getting-started.html">Grunt官网的新手上路</a>)</h3>
 
 <p>执行命令：</p>
@@ -217,6 +215,8 @@
 <p>修改useLess.js之后，自动压缩useLess.js成useLess.min.js：</p>
 
 <p><img src="/images/grunt9.jpg" alt="Grunt" title="" />;</p>
+
+<p>如果你想安装非全局的grunt，看<a href="http://www.basecss.net/article/using-grunt-in-local.html">这里</a>。</p>
 
 <p>哈哈，你照着上面5个步骤去做，有没有初步了解了grunt是做什么的了呢？不知道！那就继续看<a href="http://www.gruntjs.org/">grunt官网</a>或是google更多关于grunt的知识，或是看我下面的链接。当然，这篇文章有很多不足的地方，求各位大神指点！当然，感谢那些耐心解答我问题的大牛们，有机会的话，请你们吃M记，嘻嘻。。。！</p>
 
