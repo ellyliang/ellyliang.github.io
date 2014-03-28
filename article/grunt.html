@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="useLess - 前端开发">
+    <meta name="keywords" content="useLess,web前端,前端,HTML,CSS,JavaScript,js,女程序媛">
+    <title>Grunt安装过程 - useLess</title>
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+    <!--link(rel="alternate", type="application/rss+xml", title="TooBug", href="#{basePath}/rss/rss.xml")-->
+    <link rel="stylesheet" href="../css/light.css">
+    <link rel="stylesheet" href="../js/prettify/prettify.css">
+    <script src="../js/prettify/prettify.js"></script>
+    <script src="../js/jquery/jquery-1.7.2.min.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><a href="../index.html">useLess</a><span class="subTitle">没有做不到的事，只有迈不出的坎！</span></div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Index<br />首页</a></li>
+          <li><a href="../page/about.html">ABOUT 简介<br />ABOUT 简介</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+  <article id="container">
+    <section id="content">
+      <div id="article">
+        <div id="content-child">
+          <h1><span class="about-title">Grunt安装过程</span><em class="pubDate">2014-03-28 00:00:00</em></h1><p>Grunt是啥么？可以到<a href="http://www.gruntjs.org/">Grunt中文社区</a>了解。
+哈哈，是的，我是一名前端菜鸟，一开始不知道Grunt是什么，也不知道Grunt可以做什么，而且进入到官网看的时候，还是不大明白，但是到你按官网的里面步骤走一遍的时候，你就会初步知道grunt的作用。</p>
+
+<p>当然，你要安装grunt,首先你要安装nodejs。可以到<a href="http://nodejs.org/">node官网</a>下载安装包，跟第一篇博客一样，不讲解node的安装过程。下面是Grunt安装过程图文讲解：</p>
+
+<h3>第一步：安装全局的Grunt cli。</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install -g grunt-cli
+</code></p>
+
+<p>如下图，恭喜你安装成功！</p>
+
+<p><img src="/images/grunt1.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第二步：自动创建package.json。(PS:你也可以手动创建，参考<a href="http://www.gruntjs.org/docs/getting-started.html">Grunt官网的新手上路</a>)</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm init
+</code>
+如下图，恭喜创建成功！</p>
+
+<p><img src="/images/grunt2.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第三步：本地安装&lt; module >（PS:安装插件到当前目录 同时生成依赖)</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install module --save-dev
+</code></p>
+
+<p>如下图，恭喜安装成功！</p>
+
+<p><img src="/images/grunt3.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第四步：安装Grunt到你的项目中</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install grunt --save-dev
+</code></p>
+
+<p>如下图，恭喜安装成功！</p>
+
+<p><img src="/images/grunt4.jpg" alt="Grunt" title="" />;</p>
+
+<p>note: 这步安装的时候，npm可能会抽风（就是停在那里不动），建议安装个cnpm,详细可看<a href="http://cnpmjs.org/">cnpmjs.org</a>,安装完成之后，跟你之前一样运行你的命令。</p>
+
+<p>安装cnpm的命令：</p>
+
+<p><code>
+    npm install -g -cnpm --register-http://r.cnpmjs.org
+</code></p>
+
+<h3>第五步：配置和插件（Gruntfile.js）(PS:哈哈，我个人感觉，安装过程简单，但是配置过程难)。</h3>
+
+<blockquote>
+  <ol>
+  <li>在你的项目中建一个gruntfile.js文件。</li>
+  <li>gruntfile.js通用写法如下：</li>
+  </ol>
+</blockquote>
+
+<p><code>
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json');
+        });
+    };
+</code></p>
+
+<blockquote>
+  <ol>
+  <li>添加grunt uglify(压缩)插件，当然还有很多插件，例如grunt LESS、grunt Jshint、grunt concat等等，具体自己google，这里我就简单演示grunt uglify和grunt watch。</li>
+  </ol>
+</blockquote>
+
+<ul>
+<li>首先，你要先下载grunt uglify。</li>
+</ul>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install grunt-contrib-uglify
+</code>
+如下图，恭喜下载成功！</p>
+
+<p><img src="/images/grunt5.jpg" alt="Grunt" title="" />;</p>
+
+<p>然后gruntfile.js配置:</p>
+
+<p>```
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json'),</p>
+
+<pre><code>        uglify: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'JS/',     //源目录
+                    src: '**/*.js',    //源文件后缀
+                    dest: 'minJS/',   //目标目录
+                    ext: '.min.js'    //生成文件的后缀
+                }]
+            }
+        }
+    });
+
+    //任务加载
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    //任务自定义
+    grunt.registerTask('default', ['uglify']);
+};   
+</code></pre>
+
+<p>```
+配置完成后，执行grunt命令,如下图：</p>
+
+<p><img src="/images/grunt6.jpg" alt="Grunt" title="" />;</p>
+
+<p><code>
+    PS:
+        grunt -&gt; 执行默认任务
+        grunt taskname -&gt; 执行指定任务
+</code></p>
+
+<p>然后你会看到minJS生成一个了的压缩的useLess.min.js,如图：</p>
+
+<p><img src="/images/grunt7.jpg" alt="Grunt" title="" />;</p>
+
+<p>我的目录结构：</p>
+
+<p>```
+    ——test
+      |<strong>JS
+         |</strong>useLess.js
+      |__minJS</p>
+
+<pre><code>//当执行完grunt后，minJS中会生成个useLess.min.js。
+</code></pre>
+
+<p>```</p>
+
+<blockquote>
+  <ol>
+  <li>添加grunt watch(自动化)插件</li>
+  </ol>
+</blockquote>
+
+<p>运行命令：</p>
+
+<p><code>
+    npm install grunt-contrib-watch
+</code></p>
+
+<p>这步就不配下载成功的图了。</p>
+
+<p>在gruntfile.js中添加任务：</p>
+
+<p>```
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json'),</p>
+
+<pre><code>        uglify: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'JS/',     //源目录
+                    src: '**/*.js',    //源文件后缀
+                    dest: 'minJS/',   //目标目录
+                    ext: '.min.js'    //生成文件的后缀
+                }]
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['**/*.js'],
+                tasks: ['uglify'],
+                options: {
+                    spawn: false,
+                },
+            }
+        }
+    });
+
+    //任务加载
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    //任务自定义
+    grunt.registerTask('default', ['uglify', 'watch']);
+};
+</code></pre>
+
+<p>```</p>
+
+<p>grunt watch在你每次修改useLess.js的时候，都会自动帮你压缩，不用每次都要执行grunt命令，如图：</p>
+
+<p>没修改useLess.js之前：</p>
+
+<p><img src="/images/grunt8.jpg" alt="Grunt" title="" />;</p>
+
+<p>修改useLess.js之后，自动压缩useLess.js成useLess.min.js：</p>
+
+<p><img src="/images/grunt9.jpg" alt="Grunt" title="" />;</p>
+
+<p>哈哈，你照着上面5个步骤去做，有没有初步了解了grunt是做什么的了呢？不知道！那就继续看<a href="http://www.gruntjs.org/">grunt官网</a>或是google更多关于grunt的知识，或是看我下面的链接。当然，这篇文章有很多不足的地方，求各位大神指点！当然，感谢那些耐心解答我问题的大牛们，有机会的话，请你们吃M记，嘻嘻。。。！</p>
+
+<p>文章就到此结束鸟。。。。</p>
+
+<p>参考：</p>
+
+<blockquote>
+  <ul>
+  <li><a href="http://www.gruntjs.org/">http://www.gruntjs.org/</a></li>
+  <li><a href="http://docs.spmjs.org/contrib/simple-grunt">http://docs.spmjs.org/contrib/simple-grunt</a></li>
+  <li><a href="https://github.com/TVVT/mobile-start">https://github.com/TVVT/mobile-start</a></li>
+  <li><a href="http://www.w3cplus.com/tools/grunt-tutorial-installing-grunt.html">http://www.w3cplus.com/tools/grunt-tutorial-installing-grunt.html</a></li>
+  <li><a href="http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html">http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html</a></li>
+  </ul>
+</blockquote>
+        </div>
+      </div>
+      <div class="ds-thread"></div>
+      <script>
+        var duoshuoQuery = {short_name:"useless"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = 'http://static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+      <!--include ./include/sidebar-->
+    </section>
+    <div id="foot">
+      <p>Powered by <a href="https://github.com/TooBug/Toosolo" target="_blank">Solo</a></p>
+    </div>
+  </article>
+</html>

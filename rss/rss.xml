@@ -4,12 +4,404 @@
     <title>useLess</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Sat, 22 Mar 2014 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Mar 2014 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>Grunt安装过程</title>
+      <link>http://www.useLessblog.cn/article/grunt.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/grunt.html</guid>
+      <pubDate>Fri, 28 Mar 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>Grunt是啥么？可以到<a href="http://www.gruntjs.org/">Grunt中文社区</a>了解。
+哈哈，是的，我是一名前端菜鸟，一开始不知道Grunt是什么，也不知道Grunt可以做什么，而且进入到官网看的时候，还是不大明白，但是到你按官网的里面步骤走一遍的时候，你就会初步知道grunt的作用。</p>
+
+<p>当然，你要安装grunt,首先你要安装nodejs。可以到<a href="http://nodejs.org/">node官网</a>下载安装包，跟第一篇博客一样，不讲解node的安装过程。下面是Grunt安装过程图文讲解：</p>
+
+<h3>第一步：安装全局的Grunt cli。</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install -g grunt-cli
+</code></p>
+
+<p>如下图，恭喜你安装成功！</p>
+
+<p><img src="/images/grunt1.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第二步：自动创建package.json。(PS:你也可以手动创建，参考<a href="http://www.gruntjs.org/docs/getting-started.html">Grunt官网的新手上路</a>)</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm init
+</code>
+如下图，恭喜创建成功！</p>
+
+<p><img src="/images/grunt2.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第三步：本地安装&lt; module >（PS:安装插件到当前目录 同时生成依赖)</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install module --save-dev
+</code></p>
+
+<p>如下图，恭喜安装成功！</p>
+
+<p><img src="/images/grunt3.jpg" alt="Grunt" title="" />;</p>
+
+<h3>第四步：安装Grunt到你的项目中</h3>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install grunt --save-dev
+</code></p>
+
+<p>如下图，恭喜安装成功！</p>
+
+<p><img src="/images/grunt4.jpg" alt="Grunt" title="" />;</p>
+
+<p>note: 这步安装的时候，npm可能会抽风（就是停在那里不动），建议安装个cnpm,详细可看<a href="http://cnpmjs.org/">cnpmjs.org</a>,安装完成之后，跟你之前一样运行你的命令。</p>
+
+<p>安装cnpm的命令：</p>
+
+<p><code>
+    npm install -g -cnpm --register-http://r.cnpmjs.org
+</code></p>
+
+<h3>第五步：配置和插件（Gruntfile.js）(PS:哈哈，我个人感觉，安装过程简单，但是配置过程难)。</h3>
+
+<blockquote>
+  <ol>
+  <li>在你的项目中建一个gruntfile.js文件。</li>
+  <li>gruntfile.js通用写法如下：</li>
+  </ol>
+</blockquote>
+
+<p><code>
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json');
+        });
+    };
+</code></p>
+
+<blockquote>
+  <ol>
+  <li>添加grunt uglify(压缩)插件，当然还有很多插件，例如grunt LESS、grunt Jshint、grunt concat等等，具体自己google，这里我就简单演示grunt uglify和grunt watch。</li>
+  </ol>
+</blockquote>
+
+<ul>
+<li>首先，你要先下载grunt uglify。</li>
+</ul>
+
+<p>执行命令：</p>
+
+<p><code>
+    npm install grunt-contrib-uglify
+</code>
+如下图，恭喜下载成功！</p>
+
+<p><img src="/images/grunt5.jpg" alt="Grunt" title="" />;</p>
+
+<p>然后gruntfile.js配置:</p>
+
+<p>```
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json'),</p>
+
+<pre><code>        uglify: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'JS/',     //源目录
+                    src: '**/*.js',    //源文件后缀
+                    dest: 'minJS/',   //目标目录
+                    ext: '.min.js'    //生成文件的后缀
+                }]
+            }
+        }
+    });
+
+    //任务加载
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    //任务自定义
+    grunt.registerTask('default', ['uglify']);
+};   
+</code></pre>
+
+<p>```
+配置完成后，执行grunt命令,如下图：</p>
+
+<p><img src="/images/grunt6.jpg" alt="Grunt" title="" />;</p>
+
+<p><code>
+    PS:
+        grunt -&gt; 执行默认任务
+        grunt taskname -&gt; 执行指定任务
+</code></p>
+
+<p>然后你会看到minJS生成一个了的压缩的useLess.min.js,如图：</p>
+
+<p><img src="/images/grunt7.jpg" alt="Grunt" title="" />;</p>
+
+<p>我的目录结构：</p>
+
+<p>```
+    ——test
+      |<strong>JS
+         |</strong>useLess.js
+      |__minJS</p>
+
+<pre><code>//当执行完grunt后，minJS中会生成个useLess.min.js。
+</code></pre>
+
+<p>```</p>
+
+<blockquote>
+  <ol>
+  <li>添加grunt watch(自动化)插件</li>
+  </ol>
+</blockquote>
+
+<p>运行命令：</p>
+
+<p><code>
+    npm install grunt-contrib-watch
+</code></p>
+
+<p>这步就不配下载成功的图了。</p>
+
+<p>在gruntfile.js中添加任务：</p>
+
+<p>```
+    module.exports = function(grunt) {
+        grunt.initConfig({
+            pkg: grunt.file.readJSON('package.json'),</p>
+
+<pre><code>        uglify: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'JS/',     //源目录
+                    src: '**/*.js',    //源文件后缀
+                    dest: 'minJS/',   //目标目录
+                    ext: '.min.js'    //生成文件的后缀
+                }]
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['**/*.js'],
+                tasks: ['uglify'],
+                options: {
+                    spawn: false,
+                },
+            }
+        }
+    });
+
+    //任务加载
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    //任务自定义
+    grunt.registerTask('default', ['uglify', 'watch']);
+};
+</code></pre>
+
+<p>```</p>
+
+<p>grunt watch在你每次修改useLess.js的时候，都会自动帮你压缩，不用每次都要执行grunt命令，如图：</p>
+
+<p>没修改useLess.js之前：</p>
+
+<p><img src="/images/grunt8.jpg" alt="Grunt" title="" />;</p>
+
+<p>修改useLess.js之后，自动压缩useLess.js成useLess.min.js：</p>
+
+<p><img src="/images/grunt9.jpg" alt="Grunt" title="" />;</p>
+
+<p>哈哈，你照着上面5个步骤去做，有没有初步了解了grunt是做什么的了呢？不知道！那就继续看<a href="http://www.gruntjs.org/">grunt官网</a>或是google更多关于grunt的知识，或是看我下面的链接。当然，这篇文章有很多不足的地方，求各位大神指点！当然，感谢那些耐心解答我问题的大牛们，有机会的话，请你们吃M记，嘻嘻。。。！</p>
+
+<p>文章就到此结束鸟。。。。</p>
+
+<p>参考：</p>
+
+<blockquote>
+  <ul>
+  <li><a href="http://www.gruntjs.org/">http://www.gruntjs.org/</a></li>
+  <li><a href="http://docs.spmjs.org/contrib/simple-grunt">http://docs.spmjs.org/contrib/simple-grunt</a></li>
+  <li><a href="https://github.com/TVVT/mobile-start">https://github.com/TVVT/mobile-start</a></li>
+  <li><a href="http://www.w3cplus.com/tools/grunt-tutorial-installing-grunt.html">http://www.w3cplus.com/tools/grunt-tutorial-installing-grunt.html</a></li>
+  <li><a href="http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html">http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html</a></li>
+  </ul>
+</blockquote>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>《JS语言精粹》笔记之函数第一部分</title>
       <link>http://www.useLessblog.cn/article/func.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/func.html</guid>
+      <pubDate>Sat, 22 Mar 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <ul>
+<li>函数包含一组语句，它们是JS的基础模块单元，用于代码复用、信息隐藏和组合调用。</li>
+<li>函数用于指定对象的行为。</li>
+<li>所谓编程，就是将一组需求分解成一组函数和数据结构的技能。</li>
+</ul>
+
+<h3>函数对象</h3>
+
+<blockquote>
+  <ul>
+  <li>函数就是对象。</li>
+  <li>对象字面量产生的对象连接到Object.prototype。</li>
+  <li>函数对象连接到Function.prototype(其本身连接到Object.prototype)。</li>
+  <li><p>函数在创建时附有两个附加的隐藏属性：函数的上下文和实现函数行为的代码。</p></li>
+  <li><p>函数可以保存在变量、对象和数组中。</p></li>
+  <li>函数可以被当做参数传递给其他函数，函数也可以返回函数。</li>
+  <li>函数是对象，所以函数拥有方法。函数的不同之处是，函数可以被调用。</li>
+  </ul>
+</blockquote>
+
+<h3>函数字面量</h3>
+
+<blockquote>
+  <ul>
+  <li>函数包含4个部分：
+  *1. 保留字function；
+  *2. 函数名，可省略；
+  *3. 包围在花括号的一组参数；
+  *4. 包围在花括号的一组语句（函数的主体，被调用时执行）。</li>
+  <li>一个内部函数除了可以访问自己的参数和变量，也能自由访问把它嵌套在其中的父函数的参数与变量。</li>
+  </ul>
+</blockquote>
+
+<p>例如：</p>
+
+<pre><code>var add = function(a, b) {
+    return a + b;
+};
+</code></pre>
+
+<h3>调用</h3>
+
+<blockquote>
+  <ul>
+  <li>调用一个函数会暂停当前函数的执行，传递控制权和参数给新函数。</li>
+  <li>除了声明时定义的形式参数，每个函数还接收2个附加的参数：this和arguments（this取决于调用的模式）。</li>
+  <li>JS中有4种调用模式：方法调用模式、函数调用模式、构造器调用函数和apply调用模式。</li>
+  <li>当实际参数（arguments）的个数与形式参数（parameters）的个数不匹配时，不会导致运行时错误。</li>
+  <li>参数值过多时，超出的参数值会被忽略。如果实际参数值过少，缺失的值会被替换为undefined。</li>
+  </ul>
+</blockquote>
+
+<h3>方法调用</h3>
+
+<p>一个函数被保存为对象的一个属性时，称它为一个方法。</p>
+
+<blockquote>
+  <ul>
+  <li>一个方法被调用时，this被绑定到该对象。</li>
+  <li>方法可以使用this访问自己所属的对象，所以它能从对象中取值或对对象进行修改。</li>
+  <li>通过this可取得它们所属对象的上下文的方法称为公共方法。</li>
+  </ul>
+</blockquote>
+
+<p>例如： 
+    var myObject = {
+        value: 0,</p>
+
+<pre><code>    increment: function(inc) {   //公共方法
+        this.value += typeof inc === 'number' ? inc : 1;
+    }
+};
+
+myObject.increment();
+document.writeln(myObject.value); //1
+
+myObject.increment(2);
+document.writeln(myObject.value); //3
+</code></pre>
+
+<h3>函数调用模式</h3>
+
+<p>函数调用模式的this被绑定带全局对象，让this变成局部变量的解决办法是var that = this。</p>
+
+<p>例如：
+    myObject.double = function() {
+        var that = this;  //解决方法</p>
+
+<pre><code>    var helper = function() {
+        that.value = add(that.value, that.value);
+    };
+
+    helper();
+};
+
+//调用
+myObject.double();
+console.log(myObject.value); //6
+</code></pre>
+
+<h3>构造器调用模式</h3>
+
+<p>函数前面带上new调用，那么背地里将会创建一个链接到该函数的prototype成员的新对象,同时this会绑定到这个新对象上。</p>
+
+<pre><code>//创建一个构造函数，带有一个status属性的对象
+var Quo = function(string) {
+    this.status = string;
+};
+//增加一个get_status公共方法
+Quo.prototype.get_status = function() {
+    return this.status;
+};
+//构造Quo实例
+var myQuo = new Quo('confused');
+cosole.log(myQuo.get_status()); //"confused"
+</code></pre>
+
+<h3>Apply调用模式</h3>
+
+<blockquote>
+  <ul>
+  <li>apply方法构建一个参数数组传递给调用函数，允许我们选择this值。</li>
+  <li>apply方法接收2个参数，1：绑定给this的值，2：参数数组（arguments）。</li>
+  </ul>
+</blockquote>
+
+<pre><code>//Apply调用模式：构建一个参数数组传递给调用函数。
+//构造一个数组，并让它们相加
+var array = [3, 4];
+var sum = add.apply(null,array); //7
+
+//apply调用模式
+//构造一个包含status成员的对象
+var statusObject = {
+    status: 'A-OK'
+};
+
+var status = Quo.prototype.get_status.apply(statusObject); //'A-OK'
+</code></pre>
+
+<p>哈哈，笔记待续中。。。。。</p>
+        ]]>
+      </description>
+    </item>
+    <item>
+      <title>《JS语言精粹》笔记之函数第一部分</title>
+      <link>http://www.useLessblog.cn/article/inheritance.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/inheritance.html</guid>
       <pubDate>Sat, 22 Mar 2014 00:00:00 +0800</pubDate>
       <description>
         <![CDATA[
