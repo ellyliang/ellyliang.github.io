@@ -8,36 +8,39 @@
     <generator>Solo 2.0</generator>
     <item>
       <title>Grunt安装过程</title>
-      <link>http://www.useLessblog.cn/article/grunt.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/grunt.html</guid>
+      <link>http://www.useLessblog.cn/article/install-grunt.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/install-grunt.html</guid>
       <pubDate>Fri, 28 Mar 2014 00:00:00 +0800</pubDate>
       <description>
         <![CDATA[
         <p>Grunt是啥么？可以到<a href="http://www.gruntjs.org/">Grunt中文社区</a>了解。
 哈哈，是的，我是一名前端菜鸟，一开始不知道Grunt是什么，也不知道Grunt可以做什么，而且进入到官网看的时候，还是不大明白，但是到你按官网的里面步骤走一遍的时候，你就会初步知道grunt的作用。</p>
 
-<p>当然，你要安装grunt,首先你要安装nodejs。可以到<a href="http://nodejs.org/">node官网</a>下载安装包，跟第一篇博客一样，不讲解node的安装过程。下面是Grunt安装过程图文讲解：</p>
+<p>当然，你要安装grunt,首先你要安装nodejs。可以到<a href="http://nodejs.org/">node官网</a>下载安装包，跟第一篇博客一样，不讲解node的安装过程。</p>
+
+<p>下面是Grunt安装过程图文讲解：</p>
 
 <h3>第一步：安装全局的Grunt cli。</h3>
 
 <p>执行命令：</p>
 
-<p><code>
-    npm install -g grunt-cli
-</code></p>
+<pre><code>npm install -g grunt-cli
+</code></pre>
 
 <p>如下图，恭喜你安装成功！</p>
 
 <p><img src="/images/grunt1.jpg" alt="Grunt" title="" />;</p>
 
+<p>如果你不想全局安装grunt cli的话，看<a href="http://www.basecss.net/article/using-grunt-in-local.html">这里</a>。</p>
+
 <h3>第二步：自动创建package.json。(PS:你也可以手动创建，参考<a href="http://www.gruntjs.org/docs/getting-started.html">Grunt官网的新手上路</a>)</h3>
 
 <p>执行命令：</p>
 
-<p><code>
-    npm init
-</code>
-如下图，恭喜创建成功！</p>
+<pre><code>npm init
+</code></pre>
+
+<p>如下图，恭喜创建成功！</p>
 
 <p><img src="/images/grunt2.jpg" alt="Grunt" title="" />;</p>
 
@@ -45,9 +48,8 @@
 
 <p>执行命令：</p>
 
-<p><code>
-    npm install module --save-dev
-</code></p>
+<pre><code>npm install module --save-dev
+</code></pre>
 
 <p>如下图，恭喜安装成功！</p>
 
@@ -57,9 +59,8 @@
 
 <p>执行命令：</p>
 
-<p><code>
-    npm install grunt --save-dev
-</code></p>
+<pre><code>npm install grunt --save-dev
+</code></pre>
 
 <p>如下图，恭喜安装成功！</p>
 
@@ -69,31 +70,29 @@
 
 <p>安装cnpm的命令：</p>
 
-<p><code>
-    npm install -g -cnpm --register-http://r.cnpmjs.org
-</code></p>
+<pre><code>npm install -g -cnpm --register-http://r.cnpmjs.org
+</code></pre>
 
 <h3>第五步：配置和插件（Gruntfile.js）(PS:哈哈，我个人感觉，安装过程简单，但是配置过程难)。</h3>
 
 <blockquote>
-  <ol>
+  <ul>
   <li>在你的项目中建一个gruntfile.js文件。</li>
   <li>gruntfile.js通用写法如下：</li>
-  </ol>
+  </ul>
 </blockquote>
 
-<p><code>
-    module.exports = function(grunt) {
-        grunt.initConfig({
-            pkg: grunt.file.readJSON('package.json');
-        });
-    };
-</code></p>
+<pre><code>module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json');
+    });
+};
+</code></pre>
 
 <blockquote>
-  <ol>
+  <ul>
   <li>添加grunt uglify(压缩)插件，当然还有很多插件，例如grunt LESS、grunt Jshint、grunt concat等等，具体自己google，这里我就简单演示grunt uglify和grunt watch。</li>
-  </ol>
+  </ul>
 </blockquote>
 
 <ul>
@@ -102,21 +101,20 @@
 
 <p>执行命令：</p>
 
-<p><code>
-    npm install grunt-contrib-uglify
-</code>
-如下图，恭喜下载成功！</p>
+<pre><code>npm install grunt-contrib-uglify
+</code></pre>
+
+<p>如下图，恭喜下载成功！</p>
 
 <p><img src="/images/grunt5.jpg" alt="Grunt" title="" />;</p>
 
 <p>然后gruntfile.js配置:</p>
 
-<p>```
-    module.exports = function(grunt) {
-        grunt.initConfig({
-            pkg: grunt.file.readJSON('package.json'),</p>
+<pre><code>module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-<pre><code>        uglify: {
+        uglify: {
             default: {
                 files: [{
                     expand: true,
@@ -137,16 +135,14 @@
 };   
 </code></pre>
 
-<p>```
-配置完成后，执行grunt命令,如下图：</p>
+<p>配置完成后，执行grunt命令,如下图：</p>
 
 <p><img src="/images/grunt6.jpg" alt="Grunt" title="" />;</p>
 
-<p><code>
-    PS:
-        grunt -&gt; 执行默认任务
-        grunt taskname -&gt; 执行指定任务
-</code></p>
+<pre><code>PS:
+    grunt -&gt; 执行默认任务
+    grunt taskname -&gt; 执行指定任务
+</code></pre>
 
 <p>然后你会看到minJS生成一个了的压缩的useLess.min.js,如图：</p>
 
@@ -154,16 +150,13 @@
 
 <p>我的目录结构：</p>
 
-<p>```
-    ——test
-      |<strong>JS
-         |</strong>useLess.js
-      |__minJS</p>
+<pre><code>——test
+  |__JS
+     |__useLess.js
+  |__minJS
 
-<pre><code>//当执行完grunt后，minJS中会生成个useLess.min.js。
+//当执行完grunt后，minJS中会生成个useLess.min.js。
 </code></pre>
-
-<p>```</p>
 
 <blockquote>
   <ol>
@@ -173,20 +166,18 @@
 
 <p>运行命令：</p>
 
-<p><code>
-    npm install grunt-contrib-watch
-</code></p>
+<pre><code>npm install grunt-contrib-watch
+</code></pre>
 
 <p>这步就不配下载成功的图了。</p>
 
 <p>在gruntfile.js中添加任务：</p>
 
-<p>```
-    module.exports = function(grunt) {
-        grunt.initConfig({
-            pkg: grunt.file.readJSON('package.json'),</p>
+<pre><code>module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-<pre><code>        uglify: {
+        uglify: {
             default: {
                 files: [{
                     expand: true,
@@ -216,8 +207,6 @@
     grunt.registerTask('default', ['uglify', 'watch']);
 };
 </code></pre>
-
-<p>```</p>
 
 <p>grunt watch在你每次修改useLess.js的时候，都会自动帮你压缩，不用每次都要执行grunt命令，如图：</p>
 
