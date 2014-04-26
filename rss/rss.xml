@@ -4,8 +4,167 @@
     <title>useLess</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Fri, 28 Mar 2014 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2014 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>Javascript作用域&amp;提升-笔记</title>
+      <link>http://www.useLessblog.cn/article/scoping&amp;hoisting.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/scoping&amp;hoisting.html</guid>
+      <pubDate>Sat, 26 Apr 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>为什么第一个会报错，而第二个没报错，你造吗？不造？好的，接下来我们就一起学习以下的笔记，学完之后你就造了！哈哈......</p>
+
+<pre><code>useLess();  //TypeError: undefined is not a function
+var useLess = function(){alert(2)};
+
+useLess(); //2
+function useLess(){
+    alert(2);
+}
+</code></pre>
+
+<h3>Note1--Javascript拥有函数作用域，在Javascript中的块（例如：if-else）不会创建新的作用域，只有函数才会创建新的作用域。</h3>
+
+<p>栗子：</p>
+
+<pre><code>var name = "useLess";
+console.log(name); //"useLess"
+if(true){
+    console.log(name); //"useLess"
+    var name = "ellyLiang"; 
+    console.log(name); //"ellyLiang"
+}
+console.log(name); //"ellyLiang"
+</code></pre>
+
+<h3>Note2--如果想在Javascript中创建一个临时作用域，可用即时函数。</h3>
+
+<p>栗子：</p>
+
+<pre><code>var name = "useLess";
+if(true){
+    (function(){
+        var name="ellyLiang";
+        console.log(name); //"ellyLiang"
+    }());
+    console.log(name); //"useLess"
+}
+console.log(name); //"useLess"
+</code></pre>
+
+<h3>Note3--函数声明和变量声明被Javascript解释器移到作用域的顶部（提升）。</h3>
+
+<p>栗子：</p>
+
+<pre><code>function blog(){
+    func();
+    var name = "www.useLessblog.cn";
+}
+</code></pre>
+
+<p>被解释器解释为：</p>
+
+<pre><code>function blog(){
+    var name;
+    func();
+    name = "www.useLessblog.cn";
+}
+</code></pre>
+
+<h3>Note4--有一种情况声明所在的语句不会执行，但是不影响提升的机制。</h3>
+
+<p>栗子：</p>
+
+<pre><code>function blog(){
+    if(false){
+        var name = "www.useLessblog.cn";
+    }
+    return;
+    var github = "ellyLiang";
+}
+</code></pre>
+
+<p>被解释器解释为：</p>
+
+<pre><code>function blog(){
+    var name, github;
+    if(false){
+        name = "www.useLessblog.cn";
+    }
+    return;
+    github = "github";
+}
+</code></pre>
+
+<h3>Note5--声明和赋值一起写，但是赋值不会被提升，只有变量名被提升到函数顶部。函数声明，整个函数名和函数体都被提升。</h3>
+
+<p>栗子：</p>
+
+<pre><code>function me(){
+    blog();  //Uncaught TypeError: undefined is not a function 
+    useLess();  //"Yes, useLess is a Woman man!" 
+
+    var blog = function(){  //函数表达式（PS：blog普通变量，然后把函数赋值给blog，因此blog这个变量名被提升，而函数部分未被提升。）
+        console.log("www.useLessblog.cn");
+    };
+
+    function useLess(){    //完整的函数声明
+        console.log("Yes, useLess is a Woman man!");
+    }
+}
+me();
+</code></pre>
+
+<p>注：useLess函数声明的函数体被提升了；blog变量名被提升，但是函数部分未被提升！</p>
+
+<h3>Note6--变量识别顺序</h3>
+
+<pre><code>如果一个变量已经被定义了，它就不会被另一个相同名字的变量覆盖，这意味着函数声明比函数变量声明有更高的优先级。但是不影响对这个变量赋值的继续运行，只是声明会被忽略。
+</code></pre>
+
+<p>栗子：</p>
+
+<pre><code>function useLess(){}
+var useLess = "Yes,useLess is a Woman man!";
+console.log(useLess); //"Yes,useLess is a Woman man!"
+</code></pre>
+
+<p>被解释器解释为：</p>
+
+<pre><code>function useLess(){}
+//var useLess; //会被忽略掉
+useLess = "Yes,useLess is a Woman man!";
+console.log(useLess); //"Yes,useLess is a Woman man!"
+</code></pre>
+
+<h3>Note7--带有名字的函数表达式->可以给函数表达式起个名字，采用函数声明的语法，但不能使它成为一个函数声明，函数体也不会被提升。</h3>
+
+<p>栗子：</p>
+
+<pre><code>blog(); //Uncaught TypeError: Property 'blog' of object [object Object] is not a function 
+useLess(); //Uncaught ReferenceError: useLess is not defined 
+
+var blog = function useLess(){};
+</code></pre>
+
+<h3>最后总结：</h3>
+
+<pre><code>总是使用var声明变量，强烈建议在每个作用域顶部写一个var语句，这么做，就不会遇到提升相关的困惑了！
+哈哈~看完明白上面那2个函数的区别了么，还是不明白？好吧，建议去翻译笔主的博客学习！链接在下面！
+感觉@basecss提供的信息！大家有兴趣交流的，可以加入JS交流群：365143137！
+</code></pre>
+
+<p>参考：</p>
+
+<blockquote>
+  <ul>
+  <li><a href="http://octsky.com/post/65/">http://octsky.com/post/65/</a></li>
+  </ul>
+</blockquote>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>Grunt安装过程</title>
       <link>http://www.useLessblog.cn/article/install-grunt.html</link>
@@ -395,165 +554,6 @@ var status = Quo.prototype.get_status.apply(statusObject); //'A-OK'
       <description>
         <![CDATA[
         
-        ]]>
-      </description>
-    </item>
-    <item>
-      <title>Javascript作用域&amp;提升-笔记</title>
-      <link>http://www.useLessblog.cn/article/scoping&amp;hoisting.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/scoping&amp;hoisting.html</guid>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        <p>为什么第一个会报错，而第二个没报错，你造吗？不造？好的，接下来我们就一起学习以下的笔记，学完之后你就造了！哈哈......</p>
-
-<pre><code>useLess();  //TypeError: undefined is not a function
-var useLess = function(){alert(2)};
-
-useLess(); //2
-function useLess(){
-    alert(2);
-}
-</code></pre>
-
-<h3>Note1--Javascript拥有函数作用域，在Javascript中的块（例如：if-else）不会创建新的作用域，只有函数才会创建新的作用域。</h3>
-
-<p>栗子：</p>
-
-<pre><code>var name = "useLess";
-console.log(name); //"useLess"
-if(true){
-    console.log(name); //"useLess"
-    var name = "ellyLiang"; 
-    console.log(name); //"ellyLiang"
-}
-console.log(name); //"ellyLiang"
-</code></pre>
-
-<h3>Note2--如果想在Javascript中创建一个临时作用域，可用即时函数。</h3>
-
-<p>栗子：</p>
-
-<pre><code>var name = "useLess";
-if(true){
-    (function(){
-        var name="ellyLiang";
-        console.log(name); //"ellyLiang"
-    }());
-    console.log(name); //"useLess"
-}
-console.log(name); //"useLess"
-</code></pre>
-
-<h3>Note3--函数声明和变量声明被Javascript解释器移到作用域的顶部（提升）。</h3>
-
-<p>栗子：</p>
-
-<pre><code>function blog(){
-    func();
-    var name = "www.useLessblog.cn";
-}
-</code></pre>
-
-<p>被解释器解释为：</p>
-
-<pre><code>function blog(){
-    var name;
-    func();
-    name = "www.useLessblog.cn";
-}
-</code></pre>
-
-<h3>Note4--有一种情况声明所在的语句不会执行，但是不影响提升的机制。</h3>
-
-<p>栗子：</p>
-
-<pre><code>function blog(){
-    if(false){
-        var name = "www.useLessblog.cn";
-    }
-    return;
-    var github = "ellyLiang";
-}
-</code></pre>
-
-<p>被解释器解释为：</p>
-
-<pre><code>function blog(){
-    var name, github;
-    if(false){
-        name = "www.useLessblog.cn";
-    }
-    return;
-    github = "github";
-}
-</code></pre>
-
-<h3>Note5--声明和赋值一起写，但是赋值不会被提升，只有变量名被提升到函数顶部。函数声明，整个函数名和函数体都被提升。</h3>
-
-<p>栗子：</p>
-
-<pre><code>function me(){
-    blog();  //Uncaught TypeError: undefined is not a function 
-    useLess();  //"Yes, useLess is a Woman man!" 
-
-    var blog = function(){  //函数表达式（PS：blog普通变量，然后把函数赋值给blog，因此blog这个变量名被提升，而函数部分未被提升。）
-        console.log("www.useLessblog.cn");
-    };
-
-    function useLess(){    //完整的函数声明
-        console.log("Yes, useLess is a Woman man!");
-    }
-}
-me();
-</code></pre>
-
-<p>注：useLess函数声明的函数体被提升了；blog变量名被提升，但是函数部分未被提升！</p>
-
-<h3>Note6--变量识别顺序</h3>
-
-<pre><code>如果一个变量已经被定义了，它就不会被另一个相同名字的变量覆盖，这意味着函数声明比函数变量声明有更高的优先级。但是不影响对这个变量赋值的继续运行，只是声明会被忽略。
-</code></pre>
-
-<p>栗子：</p>
-
-<pre><code>function useLess(){}
-var useLess = "Yes,useLess is a Woman man!";
-console.log(useLess); //"Yes,useLess is a Woman man!"
-</code></pre>
-
-<p>被解释器解释为：</p>
-
-<pre><code>function useLess(){}
-//var useLess; //会被忽略掉
-useLess = "Yes,useLess is a Woman man!";
-console.log(useLess); //"Yes,useLess is a Woman man!"
-</code></pre>
-
-<h3>Note7--带有名字的函数表达式->可以给函数表达式起个名字，采用函数声明的语法，但不能使它成为一个函数声明，函数体也不会被提升。</h3>
-
-<p>栗子：</p>
-
-<pre><code>blog(); //Uncaught TypeError: Property 'blog' of object [object Object] is not a function 
-useLess(); //Uncaught ReferenceError: useLess is not defined 
-
-var blog = function useLess(){};
-</code></pre>
-
-<h3>最后总结：</h3>
-
-<pre><code>总是使用var声明变量，强烈建议在每个作用域顶部写一个var语句，这么做，就不会遇到提升相关的困惑了！
-哈哈~看完明白上面那2个函数的区别了么，还是不明白？好吧，建议去翻译笔主的博客学习！链接在下面！
-感觉@basecss提供的信息！大家有兴趣交流的，可以加入JS交流群：365143137！
-</code></pre>
-
-<p>参考：</p>
-
-<blockquote>
-  <ul>
-  <li><a href="http://octsky.com/post/65/">http://octsky.com/post/65/</a></li>
-  </ul>
-</blockquote>
         ]]>
       </description>
     </item>
