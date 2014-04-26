@@ -127,6 +127,9 @@ header nav ul li a:hover {
 	font-size: 14px;
 	line-height: 2em;
 	letter-spacing: 0.1em;
+	color: transparent;
+    background: -webkit-linear-gradient(top,blue,red);
+    -webkit-background-clip: text;
 }
 #content #article p {
 	text-indent: 2.2em;
