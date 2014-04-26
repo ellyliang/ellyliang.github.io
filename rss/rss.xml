@@ -26,7 +26,7 @@ function useLess(){
 }
 </code></pre>
 
-<h3>Note1--Javascript拥有函数作用域，在Javascript中的块（例如：if-else）不会创建新的作用域，只有函数才会创建新的作用域。</h3>
+<h3>Note1--Javascript拥有2种作用域：全局作用域和函数作用域。在Javascript中的块（例如：if-else）不会创建新的作用域，函数才会创建新的作用域。</h3>
 
 <p>栗子：</p>
 
@@ -55,7 +55,7 @@ if(true){
 console.log(name); //"useLess"
 </code></pre>
 
-<h3>Note3--函数声明和变量声明被Javascript解释器移到作用域的顶部（提升）。</h3>
+<h3>Note3--使用var声明的变量名会提升到作用域的顶端，函数声明也会提升。</h3>
 
 <p>栗子：</p>
 
@@ -65,7 +65,7 @@ console.log(name); //"useLess"
 }
 </code></pre>
 
-<p>被解释器解释为：</p>
+<p>被解释为：</p>
 
 <pre><code>function blog(){
     var name;
@@ -74,7 +74,7 @@ console.log(name); //"useLess"
 }
 </code></pre>
 
-<h3>Note4--有一种情况声明所在的语句不会执行，但是不影响提升的机制。</h3>
+<h3>Note4--有一种情况，声明所在的语句不执行，但是不影响提升的机制。</h3>
 
 <p>栗子：</p>
 
@@ -82,24 +82,24 @@ console.log(name); //"useLess"
     if(false){
         var name = "www.useLessblog.cn";
     }
-    return;
-    var github = "ellyLiang";
+    return;   //中断
+    var github = "ellyLiang";  //不执行
 }
 </code></pre>
 
-<p>被解释器解释为：</p>
+<p>与上面blog函数等效：</p>
 
 <pre><code>function blog(){
     var name, github;
     if(false){
         name = "www.useLessblog.cn";
     }
-    return;
-    github = "github";
+    return; //中断
+    github = "ellyLiang"; //不执行
 }
 </code></pre>
 
-<h3>Note5--声明和赋值一起写，但是赋值不会被提升，只有变量名被提升到函数顶部。函数声明，整个函数名和函数体都被提升。</h3>
+<h3>Note5--声明和赋值一起写，但是赋值不会被提升，只有变量名被提升到函数顶部。函数声明，整个函数名和函数体都会被提升。</h3>
 
 <p>栗子：</p>
 
@@ -131,7 +131,7 @@ var useLess = "Yes,useLess is a Woman man!";
 console.log(useLess); //"Yes,useLess is a Woman man!"
 </code></pre>
 
-<p>被解释器解释为：</p>
+<p>被解释为：</p>
 
 <pre><code>function useLess(){}
 //var useLess; //会被忽略掉
@@ -152,8 +152,8 @@ var blog = function useLess(){};
 <h3>最后总结：</h3>
 
 <p>总是使用var声明变量，强烈建议在每个作用域顶部写一个var语句，这么做，就不会遇到提升相关的困惑了！
-哈哈~看完明白上面那2个函数的区别了么，还是不明白？好吧，建议去翻译笔主的博客学习！链接在下面！
-感觉@basecss提供的信息！大家有兴趣交流的，可以加入JS交流群：365143137！</p>
+哈哈~看完明白上面那2个函数的区别了么，还是不明白？好吧，建议去翻译笔主的博客学习！链接在下面！灰常
+感谢<a href="http://www.basecss.net">@basecss</a>提供的信息和指导！这篇笔记如有错误的地方，欢迎大家指正，同时，我会继续学习作用域，然后再修改这篇笔记，希望大家多指导！大家有兴趣交流JS，可以加入JS交流群：365143137！</p>
 
 <p>参考：</p>
 
