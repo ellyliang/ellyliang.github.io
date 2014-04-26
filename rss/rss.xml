@@ -16,7 +16,9 @@
         <p>为什么第一个会报错，而第二个没报错，你造吗？不造？好的，接下来我们就一起学习以下的笔记，学完之后你就造了！哈哈......</p>
 
 <pre><code>useLess();  //TypeError: undefined is not a function
-var useLess = function(){alert(2)};
+var useLess = function(){
+    alert(2)
+};
 
 useLess(); //2
 function useLess(){
