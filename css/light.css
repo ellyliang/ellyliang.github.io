@@ -134,7 +134,7 @@ header nav ul li a:hover {
 #content #article p {
 	text-indent: 2.2em;
 	color: transparent;
-	 background: -webkit-linear-gradient(bottom,pink,blue);
+	 background: -webkit-linear-gradient(bottom,pink,blue,red);
 	 -webkit-background-clip: text;
 }
 #content #article h1 {
