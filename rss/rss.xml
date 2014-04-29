@@ -547,17 +547,6 @@ var status = Quo.prototype.get_status.apply(statusObject); //'A-OK'
       </description>
     </item>
     <item>
-      <title>《JS语言精粹》笔记之继承</title>
-      <link>http://www.useLessblog.cn/article/inheritance.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/inheritance.html</guid>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        
-        ]]>
-      </description>
-    </item>
-    <item>
       <title>《JS语言精粹》笔记之对象</title>
       <link>http://www.useLessblog.cn/article/object.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/object.html</guid>
