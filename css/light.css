@@ -192,7 +192,7 @@ header nav ul li a:hover {
 #content #article blockquote {
 	margin: 1em 4em 1em 2em;
 	padding: 0.6em 1em;
-	background: #f1f1f1;
+	background: rgba(224, 44, 152, 0.14);
 }
 #content #article blockquote blockquote {
 	padding: 0 0 0 1em;
