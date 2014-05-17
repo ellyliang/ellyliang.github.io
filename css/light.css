@@ -100,9 +100,9 @@ header nav ul li a:hover {
 	text-align: center;
 }
 #sidebar p.avatar img:hover {
-	-moz-transform:rotate(-20deg);
-    -webkit-transform:rotate(-20deg);
-    -o-transform:rotate(-20deg);
+	-moz-transform:rotate(-360deg);
+    -webkit-transform:rotate(-360deg);
+    -o-transform:rotate(-360deg);
 }
 #sidebar p.avatar img{
 	width: 150px;
