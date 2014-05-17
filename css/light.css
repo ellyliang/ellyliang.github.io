@@ -124,18 +124,15 @@ header nav ul li a:hover {
 	box-shadow: 1px 1px 3px #aaa;
 }
 #content #article {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 2em;
 	letter-spacing: 0.1em;
-	/*color: transparent;
-    background: -webkit-linear-gradient(top,blue,red);
-    -webkit-background-clip: text;*/
 }
 #content #article p {
 	text-indent: 2.2em;
-	color: transparent;
+	/*color: transparent;
 	 background: -webkit-linear-gradient(top,blue,pink,red,green,red);
-	 -webkit-background-clip: text;
+	 -webkit-background-clip: text;*/
 }
 #content #article h1 {
 	border-left: 3px solid #FF3399;
