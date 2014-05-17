@@ -147,7 +147,7 @@ header nav ul li a:hover {
 	color: #888;
 }
 #content #article h3 {
-	background: #CCC;
+	background: rgba(224, 18, 68, 0.07);
 	margin: 20px 0;
 	padding: 0 20px;
 	border-left: 2px solid #FF3399;
