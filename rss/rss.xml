@@ -929,39 +929,6 @@ MYAPP.flight = {
       </description>
     </item>
     <item>
-      <title>Placeholders in Form Field Are Harmful</title>
-      <link>http://www.useLessblog.cn/article/placeholder.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/placeholder.html</guid>
-      <pubDate>Fri, 07 Mar 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        <!-- $$solo_more$$ -->
-
-<blockquote>
-  <p><strong>总结：</strong> placeholder文本在一个表单内很难让用户去记得表单里面的信息，也很难去检查和修复错误，同时，也会给用户带来视觉和认知障碍方面的额外负担。 </p>
-</blockquote>
-
-<p>在上下文中说明或提示有助于解释清楚每个表单域的作用，从而提高完成率和<a href="">转化率</a>。表单有很多种提示的的方法，常见的一种方法就是在表单中插入一个说明。不幸的是，经过用户不断的测试表明，<strong>Placeholders这种方法损坏了表单的可用性，而不是起到了帮助的作用。</strong></p>
-
-<h3>标签（labels）和占位符（placeholder）</h3>
-
-<p>标签是告知用户一个给定的表单域属于什么样的信息，经常被放在表单域的外面。占位符文本位于文本域的内部，是一个额外的提示，说明，或是特殊域所要求信息的例子。当用户操作这个表单域的时候，这些提示通常会消失。</p>
-
-<p><img src="/images/label-placeholder-captions.png" alt="Placeholders" title="" />;</p>
-
-<p>参考：</p>
-
-<blockquote>
-  <ul>
-  <li><a href="https://github.com/TooBug/TooSolo">https://github.com/TooBug/TooSolo</a></li>
-  <li><a href="https://github.com/TooBug/TooSolo/issues/17">https://github.com/TooBug/TooSolo/issues/17</a></li>
-  <li><a href="https://github.com/TooBug/TooSolo/issues/21">https://github.com/TooBug/TooSolo/issues/21</a></li>
-  </ul>
-</blockquote>
-        ]]>
-      </description>
-    </item>
-    <item>
       <title>如何用toosolo建静态博客</title>
       <link>http://www.useLessblog.cn/article/toosolo.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/toosolo.html</guid>
