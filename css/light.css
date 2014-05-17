@@ -22,10 +22,10 @@ ul {
 body {
 	color: #888;
 	min-width: 960px;
+	font-family: "microsoft yahei";
 	background: url(../images/bg.gif) 0 0 repeat;
 }
 header {
-	font-family: "microsoft yahei";
 	padding: 20px 20px 10px 20px;
 	box-shadow: 0 3px #aaa;
 	background: #1b1b1b;
