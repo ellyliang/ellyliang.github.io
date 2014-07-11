@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="description" content="useLess - 前端开发">
     <meta name="keywords" content="useLess,web前端,前端,HTML,CSS,JavaScript,js,女程序媛">
-    <title>ABOUT 简介 - useLess</title>
+    <title>ABOUT 简介 - useLess'BLOG</title>
     <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
-    <!--link(rel="alternate", type="application/rss+xml", title="TooBug", href="#{basePath}/rss/rss.xml")-->
+    <!--link(rel="alternate", type="application/rss+xml", title="useLess'blog", href="#{basePath}/rss/rss.xml")-->
     <link rel="stylesheet" href="../css/light.css">
     <link rel="stylesheet" href="../js/prettify/prettify.css">
     <script src="../js/prettify/prettify.js"></script>
@@ -15,7 +15,7 @@
   </head>
   <body>
     <header>
-      <div id="logo"><a href="../index.html">useLess</a><span class="subTitle">没有做不到的事，只有迈不出的坎！</span></div>
+      <div id="logo"><a href="../index.html">useLess'BLOG</a><span class="subTitle">没有做不到的事，只有迈不出的坎！</span></div>
       <nav>
         <ul>
           <li><a href="../">Index<br />首页</a></li>
@@ -29,23 +29,29 @@
           <div id="article">
             <h1><span class="about-title">ABOUT 简介</span></h1><h3>useLess，前端女程序媛，欢迎访问我的博客，更欢迎一起交流前端知识。</h3>
 
-<pre><code>var Intro = {
-    name : 'useLess',
-    age : 'secret',
-    sex : 'female',
-    Worked : 'JZ',
-    Contact : {
-        sinaWeibo : 'Lcm_成妹'，
-        QQWeibo : 'Lcm_成妹',
-        weixin : 'Lcm',
-        QQ : 1795515073,
-        gitHub : 'https://github.com/ellyliang',
-        more : 'twitter......'
-        },
-    Interest : ['tv','coding','music','and so on'],
-    Motto : '没有做不到的事，只有迈不出的坎',
-    WhyThisName : '因为Less,所以use;结果：useLess'
+<pre><code>function Useless(name, work, motto) {
+    this.name = name;
+    this.work = work;
+    this.motto = motto;
+    this.contactName = "Ellyliang";
+    this.interest = ['reading','coding','music','shopping'];
+}
+
+Useless.prototype = {
+    constructor: Useless,
+    sinaWeibo: function() {
+        console.log(this.contactName);
+    },
+    weixin: function() {
+        console.log(this.contactName);
+    },
+    QQ : 1795515073,
+    gitHub : 'https://github.com/ellyliang'
 };
+
+var ellyliang = new Useless("useLess", "FF", "没有做不到的事，只有迈不出的坎");
+ellyliang.sinaWeibo(); //"Ellyliang"
+ellyliang.weixin(); //"Ellyliang"
 </code></pre>
 
 <h3>值得你关注的博客</h3>
@@ -68,16 +74,12 @@
   <li><a href="http://www.gruntjs.org/article/home.html">gruntjs中文社区</a></li>
   </ul>
 </blockquote>
-
-<h3>说明</h3>
-
-<p>哈哈，本博客刚建，还有一些问题，后续有时间再完善。</p>
           </div>
         </section>
       </div>
       <div class="ds-thread"></div>
       <script>
-        var duoshuoQuery = {short_name:"useless"};
+        var duoshuoQuery = {short_name:"useLess"};
         (function() {
          var ds = document.createElement('script');
          ds.type = 'text/javascript';ds.async = true;
