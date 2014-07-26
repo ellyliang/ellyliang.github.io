@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="useLess - 前端开发">
     <meta name="keywords" content="useLess,web前端,前端,HTML,CSS,JavaScript,js,女程序媛">
-    <title>css3之很丑的蜗牛 - useLess'blog</title>
+    <title>css3-萌蜗牛 - useLess'blog</title>
     <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
     <!--link(rel="alternate", type="application/rss+xml", title="useLess'blog", href="#{basePath}/rss/rss.xml")-->
     <link rel="stylesheet" href="../css/light.css">
@@ -28,158 +28,17 @@
     <section id="content">
       <div id="article">
         <div id="content-child">
-          <h1><span class="about-title">css3之很丑的蜗牛</span><em class="pubDate">2014-06-12 00:00:00</em></h1><p>嗯，这个“很丑的蜗牛”由来是因为腾讯一位女程序媛的“一个红点的故事”而且产生的。想看她一个元素做出来的叮当？请看最后的链接！不过，确切来说，自己想通过这只不太像蜗牛的蜗牛学习下css3，哈哈哈哈....</p>
+          <h1><span class="about-title">css3-萌蜗牛</span><em class="pubDate">2014-06-12 00:00:00</em></h1><p>嗯，这个“很萌的蜗牛”由来是因为腾讯一位女程序媛的“一个红点的故事”而且产生的。想看她一个元素做出来的叮当？请看最后的链接！不过，确切来说，自己想通过这只不太像蜗牛的蜗牛学习下css3，哈哈哈哈....</p>
 
 <p><img src="/images/snail.png" alt="Snail" title="" />;</p>
 
-<h3>代码如下</h3>
-
-<p>HTML:</p>
-
-<pre><code>&lt;div class="snail"&gt;
-    &lt;div class="snail-body"&gt;&lt;/div&gt;
-    &lt;div class="snail-tail"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>CSS:</p>
-
-<pre><code>body {
-    width: 100%;
-    height: 100%;
-    background: #66cd99;
-    overflow: hidden;
-}
-@keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-/*firefox*/
-@-moz-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: 100px;
-    }
-}
-/*chrome*/
-@-webkit-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-
-/*opera*/
-@-o-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-.snail {
-    -webkit-animation: 25s linear infinite snailRun;
-       -moz-animation: 25s linear infinite snailRun;
-         -o-animation: 25s linear infinite snailRun;
-            animation: 25s linear infinite snailRun;
-}
-.snail {
-    position: relative;
-    left: 1500px;
-    width: 100px;
-    height: 100px;
-    margin-top: 300px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-.snail:before {
-    content: '';
-    position: absolute;
-    left: 16%;
-    top: 16%;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-.snail:after {
-    content: '';
-    position: absolute;
-    left: 31%;
-    top: 31%;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-
-.snail-body {
-    position: relative;
-    left: -37px;
-    top: 22px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 1px #fff, -33px 15px 0 -15px #333333, -34px 15px 0 1.5px #fff;
-    background: #fff;
-}
-.snail-body:before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #000;
-}
-.snail-tail {
-    position: absolute;
-    top: 102px;
-    width: 100px;
-    height: 20px;
-    background: #fef0bc;
-    border-top-left-radius: 60px 90px;
-    border-bottom-right-radius: 120px 90px;
-}
-.snail-tail:before {
-    content: '';
-    position: absolute;
-    top: -53px;
-    left: -17px;
-    width: 27px;
-    height: 80px;
-    background: #fef0bc;
-    border-top-left-radius: 90px 0px;
-    border-bottom-right-radius: 120px 0px;
-    border-top-right-radius: 120px 90px;
-    border-bottom-left-radius: 120px 90px;
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(140deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);      
-}
-</code></pre>
+<h3><a href="http://www.uselessblog.cn/JQM-me/snail.html">http://www.uselessblog.cn/JQM-me/snail.html</a></h3>
 
 <p>链接：</p>
 
 <blockquote>
   <ul>
   <li><a href="http://pigrun.github.io/1st_run/demos/pping/pokonyan/pokonyan.html">一个小红点的故事</a></li>
-  <li><a href="https://github.com/ellyliang/Note/blob/master/html&amp;css/css3Slide/snail.html">很丑蜗牛</a></li>
   </ul>
 </blockquote>
         </div>

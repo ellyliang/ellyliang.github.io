@@ -93,164 +93,23 @@ Ellyliang.getInstace().getAge();
       </description>
     </item>
     <item>
-      <title>css3之很丑的蜗牛</title>
+      <title>css3-萌蜗牛</title>
       <link>http://www.useLessblog.cn/article/snail.html</link>
       <guid isPermaLink="true">http://www.useLessblog.cn/article/snail.html</guid>
       <pubDate>Thu, 12 Jun 2014 00:00:00 +0800</pubDate>
       <description>
         <![CDATA[
-        <p>嗯，这个“很丑的蜗牛”由来是因为腾讯一位女程序媛的“一个红点的故事”而且产生的。想看她一个元素做出来的叮当？请看最后的链接！不过，确切来说，自己想通过这只不太像蜗牛的蜗牛学习下css3，哈哈哈哈....</p>
+        <p>嗯，这个“很萌的蜗牛”由来是因为腾讯一位女程序媛的“一个红点的故事”而且产生的。想看她一个元素做出来的叮当？请看最后的链接！不过，确切来说，自己想通过这只不太像蜗牛的蜗牛学习下css3，哈哈哈哈....</p>
 
 <p><img src="/images/snail.png" alt="Snail" title="" />;</p>
 
-<h3>代码如下</h3>
-
-<p>HTML:</p>
-
-<pre><code>&lt;div class="snail"&gt;
-    &lt;div class="snail-body"&gt;&lt;/div&gt;
-    &lt;div class="snail-tail"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>CSS:</p>
-
-<pre><code>body {
-    width: 100%;
-    height: 100%;
-    background: #66cd99;
-    overflow: hidden;
-}
-@keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-/*firefox*/
-@-moz-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: 100px;
-    }
-}
-/*chrome*/
-@-webkit-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-
-/*opera*/
-@-o-keyframes snailRun {
-    from {
-        right: 0;
-    }
-    to {
-        left: -100px;
-    }
-}
-.snail {
-    -webkit-animation: 25s linear infinite snailRun;
-       -moz-animation: 25s linear infinite snailRun;
-         -o-animation: 25s linear infinite snailRun;
-            animation: 25s linear infinite snailRun;
-}
-.snail {
-    position: relative;
-    left: 1500px;
-    width: 100px;
-    height: 100px;
-    margin-top: 300px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-.snail:before {
-    content: '';
-    position: absolute;
-    left: 16%;
-    top: 16%;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-.snail:after {
-    content: '';
-    position: absolute;
-    left: 31%;
-    top: 31%;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 2px #666;
-    background: #fe9b00;
-}
-
-.snail-body {
-    position: relative;
-    left: -37px;
-    top: 22px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0 1px #fff, -33px 15px 0 -15px #333333, -34px 15px 0 1.5px #fff;
-    background: #fff;
-}
-.snail-body:before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #000;
-}
-.snail-tail {
-    position: absolute;
-    top: 102px;
-    width: 100px;
-    height: 20px;
-    background: #fef0bc;
-    border-top-left-radius: 60px 90px;
-    border-bottom-right-radius: 120px 90px;
-}
-.snail-tail:before {
-    content: '';
-    position: absolute;
-    top: -53px;
-    left: -17px;
-    width: 27px;
-    height: 80px;
-    background: #fef0bc;
-    border-top-left-radius: 90px 0px;
-    border-bottom-right-radius: 120px 0px;
-    border-top-right-radius: 120px 90px;
-    border-bottom-left-radius: 120px 90px;
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(140deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);      
-}
-</code></pre>
+<h3><a href="http://www.uselessblog.cn/JQM-me/snail.html">http://www.uselessblog.cn/JQM-me/snail.html</a></h3>
 
 <p>链接：</p>
 
 <blockquote>
   <ul>
   <li><a href="http://pigrun.github.io/1st_run/demos/pping/pokonyan/pokonyan.html">一个小红点的故事</a></li>
-  <li><a href="https://github.com/ellyliang/Note/blob/master/html&amp;css/css3Slide/snail.html">很丑蜗牛</a></li>
   </ul>
 </blockquote>
         ]]>
@@ -1173,57 +1032,6 @@ MYAPP.flight = {
   <ul>
   <li>只要把多个全局变量都整理在一个名称空间下，你将显著降低与其他应用程序、组件或类库之间产生糟糕的相互影响的可能性。</li>
   <li>你的程序也会变得更容易阅读。</li>
-  </ul>
-</blockquote>
-        ]]>
-      </description>
-    </item>
-    <item>
-      <title>Placeholders in Form Field Are Harmful</title>
-      <link>http://www.useLessblog.cn/article/placeholder.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/placeholder.html</guid>
-      <pubDate>Fri, 07 Mar 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        <!-- $$solo_more$$ -->
-
-<blockquote>
-  <p><strong>总结：</strong> placeholder文本在一个表单内很难让用户去记得表单里面的信息，也很难去检查和修复错误，同时，也会给用户增加视觉和认知障碍方面的额外负担。 </p>
-</blockquote>
-
-<p>在上下文中说明或提示有助于解释清楚每个表单域的作用，从而提高完成率和<a href="">转化率</a>。表单有很多种提示的的方法，常见的一种方法就是在表单中插入一个说明。不幸的是，经过用户不断的测试表明，<strong>Placeholders这种方法损坏了表单的可用性，而不是起到了帮助的作用。</strong></p>
-
-<h3>标签（labels）和占位符（placeholder）</h3>
-
-<p>标签（Labels）是告知用户一个给定的表单域属于什么样的信息，经常被放在表单域的外面。占位符(Placeholder)文本位于表单域的内部，是一个额外的提示，说明，或是特殊域所要求信息的例子。当用户操作这个表单域的时候，这些提示通常会消失。</p>
-
-<p><img src="/images/label-placeholder-captions.png" alt="Placeholders" title="" />;</p>
-
-<h3>占位符（Placeholders）替换标签（Labels）</h3>
-
-<p>用表单域里面的占位符文本来替换表单域的标签这些形式可以减少页面上的混乱，或是缩短表单的长度。虽然这种方法是个好的意向，但是我们研究表明，placeholders有很多的负面后果。</p>
-
-<p><img src="/images/placeholder-as-label.png" alt="Placeholders" title="" />;</p>
-
-<p>Worst:这个例子，占位符文本被用来代替标签。</p>
-
-<h3>以下是解释为什么占位符(Placeholders)不应该被用来代替标签域（filed labels）。</h3>
-
-<blockquote>
-  <p>1、<strong>消失的占位符文本（Placeholder text）会破坏用户的<a href="http://www.nngroup.com/articles/short-term-memory-and-web-usability/">短期记忆</a></strong></p>
-</blockquote>
-
-<p>当用户快要填完很长表单的时候，忘记了表单中的提示，这时候，他不得不去删除他写在表单上面的信息，然后再点击表单域的外面，占位符文本才会再显示。在理想的情况下，用户即将要填完表单的时候才会完全集中。但实际上，用户有很多任务。他们有不同的标签打开，或者他们被一个email或是电话拉走。对于这些复杂的任务，他们或许不得不停下来去检索文档或者订单号。从我们的<a href="http://www.nngroup.com/reports/mobile-website-and-application-usability/">移动可用性研究</a>中我们知道，移动用户也经常会分心，然后不小心就中断他们使用的设备。所以，帮助用户拿起他们拉下的地方很重要。</p>
-
-<p>对于简单的表单来说，频繁的使用一两个表单，例如搜索表单或登录表单。比使用复杂或少用的表单少破坏用户的记忆点。因为用简单，相似的表单，用户可以猜到它们应该输入什么。</p>
-
-<p>参考：</p>
-
-<blockquote>
-  <ul>
-  <li><a href="https://github.com/TooBug/TooSolo">https://github.com/TooBug/TooSolo</a></li>
-  <li><a href="https://github.com/TooBug/TooSolo/issues/17">https://github.com/TooBug/TooSolo/issues/17</a></li>
-  <li><a href="https://github.com/TooBug/TooSolo/issues/21">https://github.com/TooBug/TooSolo/issues/21</a></li>
   </ul>
 </blockquote>
         ]]>
