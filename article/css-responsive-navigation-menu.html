@@ -30,9 +30,7 @@
         <div id="content-child">
           <h1><span class="about-title">译文《CSS:响应式导航菜单》</span><em class="pubDate">2014-08-12 00:00:00</em></h1><p>之前我（原文作者）已经写过一篇关于如何制作响应式设计<a href="http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial">手机导航 </a>的教程，但现在我（原文作者）发现一个不需要使用javascript也可以制作响应式菜单的方法。它使用了简洁和语义化的html5标签，菜单可以向左，中间或右对齐。前面的教程菜单只能点击切换，本教程的菜单是通过hover切换，这样用户体验更友好。另外，用active/current来提示选中的菜单项，还可以在所有移动端浏览器和包括ie在内的桌面浏览器中运行。</p>
 
-<blockquote>
-  <p><a href="http://webdesignerwall.com/demo/responsive-menu/">css响应式菜单demo</a></p>
-</blockquote>
+<p><a href="http://webdesignerwall.com/demo/responsive-menu/">css响应式菜单demo</a></p>
 
 <h3>目的</h3>
 
@@ -111,7 +109,7 @@
 
 <h3>支持Internet Explorer</h3>
 
-<p>HTML5  <code>&lt;nav&gt;</code>和媒体查询对IE8及以下版本不支持。因此需要引入<a href="https://code.google.com/p/css3-mediaqueries-js/">css3-mediaqueries.js</a>（或<a href="https://github.com/scottjehl/Respond">respond.js</a>）和<a href="https://code.google.com/p/html5shim/">html5shim.js</a>。如果你不想引入html5shim.js，可以用<code>div</code>标签代替<code>nav</code>标签。</p>
+<p>HTML5  <code>&lt;nav&gt;</code>和媒体查询对IE8及以下版本浏览器不支持。因此需要引入<a href="https://code.google.com/p/css3-mediaqueries-js/">css3-mediaqueries.js</a>（或<a href="https://github.com/scottjehl/Respond">respond.js</a>）和<a href="https://code.google.com/p/html5shim/">html5shim.js</a>。如果你不想引入html5shim.js，可以用<code>div</code>标签代替<code>nav</code>标签。</p>
 
 <pre><code>&lt;!--[if lt IE 9]&gt;
     &lt;script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"&gt;&lt;/script&gt;
