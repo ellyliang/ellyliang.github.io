@@ -431,7 +431,7 @@ header nav ul li a:hover {
 	background: #FF3399;
 }
 #content-child img{
-	max-width: 79em;
+	max-width: 96%;
 	/*width: 96%;*/
 	border: 0.7em solid rgba(240, 17, 88, 0.14);
 	-moz-border-radius: 0.7em;
