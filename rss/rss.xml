@@ -44,7 +44,7 @@
 
 <h3>CSS</h3>
 
-<p>导航的css现实（PC端）非常简单，所以我（原文作者）不打算进入细节。注意，我（原文作者）将<code>nav</code>中的<code>&lt;li&gt;</code>元素的浮动<code>float:left</code>用<code>display:inline-block</code>代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置<code>&lt;ul&gt;</code>标签的<code>text-align</code>的属性。</p>
+<p>导航的css实现（PC端）非常简单，所以我（原文作者）不打算进入细节。注意，我（原文作者）将<code>nav</code>中的<code>&lt;li&gt;</code>元素的浮动<code>float:left</code>用<code>display:inline-block</code>代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置<code>&lt;ul&gt;</code>标签的<code>text-align</code>的属性。</p>
 
 <pre><code>/* nav */
 .nav {
