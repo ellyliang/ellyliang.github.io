@@ -28,15 +28,7 @@
     <section id="content">
       <div id="article">
         <div class="indexarticle">
-          <h1><a href="./article/not-adding-global-scope.html">译文：确保不在javascript中增加全局作用域</a><em class="pubDate">2014-09-09</em></h1><h3>原文链接：</h3>
-
-<blockquote>
-  <ul>
-  <li><a href="http://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm_source=feweekly&amp;utm_campaign=issue39&amp;utm_medium=web">hhttp://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm<em>source=feweekly&amp;utm</em>campaign=issue39&amp;utm_medium=web</a></li>
-  </ul>
-</blockquote>
-
-<p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
+          <h1><a href="./article/not-adding-global-scope.html">译文：确保不在javascript中增加全局作用域</a><em class="pubDate">2014-09-09</em></h1><p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
 
 <pre><code>function sayHello(person)
 {

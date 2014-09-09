@@ -14,7 +14,7 @@ ul {
 	list-style: none;
 }
 @font-face {
-	font-family: "microsoft yahei";
+	font-family: Monaco, Consolas, Menlo, "Courier New", monospace;
 	src: url("../fonts/HelveticaUltraLight.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
@@ -22,7 +22,7 @@ ul {
 body {
 	color: #888;
 	min-width: 960px;
-	font-family: "microsoft yahei";
+	font-family: Monaco, Consolas, Menlo, "Courier New", monospace;
 	background: url(../images/bg.gif) 0 0 repeat;
 }
 header {
@@ -303,6 +303,7 @@ header nav ul li a:hover {
 #content #article pre,
 #content #article code {
 	font-family: "Courier New", Courier, monospace;
+	font-size: 1em;
 }
 #content #article pre {
 	border: 1px solid #ddd;

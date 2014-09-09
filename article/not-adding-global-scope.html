@@ -28,15 +28,7 @@
     <section id="content">
       <div id="article">
         <div id="content-child">
-          <h1><span class="about-title">译文：确保不在javascript中增加全局作用域</span><em class="pubDate">2014-09-09 00:00:00</em></h1><h3>原文链接：</h3>
-
-<blockquote>
-  <ul>
-  <li><a href="http://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm_source=feweekly&amp;utm_campaign=issue39&amp;utm_medium=web">hhttp://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm<em>source=feweekly&amp;utm</em>campaign=issue39&amp;utm_medium=web</a></li>
-  </ul>
-</blockquote>
-
-<p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
+          <h1><span class="about-title">译文：确保不在javascript中增加全局作用域</span><em class="pubDate">2014-09-09 00:00:00</em></h1><p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
 
 <pre><code>function sayHello(person)
 {
@@ -101,11 +93,19 @@ $(document).ready(function() {
 
 <p>这样做除了其他事项外，还可以防止使用未声明的变量，未声明的变量是上面所以提及的sayHello()函数问题的根源。Chrome 13+, IE 10+, Safari 5.1+, 和Firefox 4+都兼容严格模式。如果你添加严格模式到上面的代码中（请看<a href="http://jsfiddle.net/7Rx32/4/">fiddle</a>）,当你运行代码的时候，你会发现有个错误（请查阅开发者工具的console）:</p>
 
-<p><img src="image_3.png" alt="说明" title="" /></p>
+<p><img src="/images/image_3.png" alt="说明" title="" /></p>
 
 <h3>总结</h3>
 
 <p>大多数现代浏览器都支持"use strict"，同时使用严格模式可以养成良好的代码习惯，而且严格模式会阻止常见的问题，例如不经意将对象添加到全局作用域中。你也可以在全局对象之前和执行方法之后检查对象的数量，最好做法是在你的javascript单元测试中检查对象的数量。</p>
+
+<h3>原文链接：</h3>
+
+<blockquote>
+  <ul>
+  <li><a href="http://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm_source=feweekly&amp;utm_campaign=issue39&amp;utm_medium=web">hhttp://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm<em>source=feweekly&amp;utm</em>campaign=issue39&amp;utm_medium=web</a></li>
+  </ul>
+</blockquote>
         </div>
       </div>
       <div class="ds-thread"></div>
