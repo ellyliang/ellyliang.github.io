@@ -4,8 +4,96 @@
     <title>useLess[blog]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Tue, 12 Aug 2014 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Sep 2014 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>译文：确保不在javascript中增加全局作用域</title>
+      <link>http://www.useLessblog.cn/article/not-adding-global-scope.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/not-adding-global-scope.html</guid>
+      <pubDate>Tue, 09 Sep 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <h3>原文链接：</h3>
+
+<blockquote>
+  <ul>
+  <li><a href="http://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm_source=feweekly&amp;utm_campaign=issue39&amp;utm_medium=web">hhttp://ardalis.com/ensure-you-are-not-adding-to-global-scope-in-javascript?utm<em>source=feweekly&amp;utm</em>campaign=issue39&amp;utm_medium=web</a></li>
+  </ul>
+</blockquote>
+
+<p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
+
+<pre><code>function sayHello(person)
+{
+    message = "Hello, " + person;
+    $("#message").text(message);
+}
+
+sayHello('@ardalis');
+
+
+&lt;div id="message" /&gt;
+</code></pre>
+
+<p>在这个例子中，我们定义了一个函数，在函数里边设置了一个变量，然后用jquery去修改div。但是因为我们没有声明<code>var</code>这个关键词，所以实际上我们已经增加了一个新的对象message到全局作用域中。事实上，如果其他的一些函数也存在message这个全局对象，那么我们刚声明的message就会覆盖掉其他一些函数的message，从而可能导致系统的其他部分被破坏，即使其他部分没有被修改过。增加紧密的耦合（tight coupling）在我们的设计中，很可能不经意间，会使我们写的javascript应用更加脆弱且更难维护。</p>
+
+<p>另外，全局作用域很容易意外的导致错误，那么我们如何去避免它？当然有一些工具对找出javascript中的错误问题很有帮助,例如JSLint 。运行<code>sayHello()</code>函数，通过JSLint可以让你知道<code>message</code>在使用之前有没有被定义过。</p>
+
+<h3>全局数量</h3>
+
+<p>另一种方法是在全局空间中计算对象的数量，确保你没有增加同一个全局对象。这样做可以作为你测试套件每个函数的基础，声明每个函数开始和结束都没有改变全局状态的一部分（或是，如果函数想要增加到全局状态中，确保该函数中的对象是唯一你想要的）。关键是在给定的时间里能够计算多少个全局对象。你可以执行以下的代码：</p>
+
+<pre><code>function sayHello(person)
+{
+    message = "Hello, " + person;
+    $("#message").text(message);
+}
+
+function sayHelloShouldNotAddToGlobalScope(globalObject)
+{
+    var initialGlobalCount = Object.keys(globalObject).length;
+    sayHello("@ardalis");
+    var endGlobalCount = Object.keys(globalObject).length;
+    if(initialGlobalCount == endGlobalCount) {
+        $("#result").text("Success!");
+    } else {
+        $("#result").text("Failed - Initial Count: " + 
+                            initialGlobalCount + 
+                            " End Count: " +
+                            endGlobalCount);
+    }
+}
+
+$(document).ready(function() {
+    // run test
+    sayHelloShouldNotAddToGlobalScope(window);    
+});
+
+
+
+&lt;p id="message" /&gt;
+&lt;p id="result" /&gt;
+</code></pre>
+
+<p>运行这个函数，你应该可以看到，该函数在全局作用域的结束比开始多了个项目（确切的数字会在不同的环境中运行该函数）。</p>
+
+<h3>使用严格模式</h3>
+
+<p>另一个方法是声明<code>"use strict;"</code>模式。它的做法很简单，无论是本地或是全局，在你的代码中增加<code>"use strict"</code>这个字符串，然后末尾加个分号。像这样：</p>
+
+<pre><code>"use strict";
+</code></pre>
+
+<p>这样做除了其他事项外，还可以防止使用未声明的变量，未声明的变量是上面所以提及的sayHello()函数问题的根源。Chrome 13+, IE 10+, Safari 5.1+, 和Firefox 4+都兼容严格模式。如果你添加严格模式到上面的代码中（请看<a href="http://jsfiddle.net/7Rx32/4/">fiddle</a>）,当你运行代码的时候，你会发现有个错误（请查阅开发者工具的console）:</p>
+
+<p><img src="image_3.png" alt="说明" title="" /></p>
+
+<h3>总结</h3>
+
+<p>大多数现代浏览器都支持"use strict"，同时使用严格模式可以养成良好的代码习惯，而且严格模式会阻止常见的问题，例如不经意将对象添加到全局作用域中。你也可以在全局对象之前和执行方法之后检查对象的数量，最好做法是在你的javascript单元测试中检查对象的数量。</p>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>译文《CSS:响应式导航菜单》</title>
       <link>http://www.useLessblog.cn/article/css-responsive-navigation-menu.html</link>
@@ -174,92 +262,6 @@
 
 <blockquote>
   <p>本文译自：<a href="http://webdesignerwall.com/tutorials/css-responsive-navigation-menu">http://webdesignerwall.com/tutorials/css-responsive-navigation-menu</a></p>
-</blockquote>
-        ]]>
-      </description>
-    </item>
-    <item>
-      <title>Javascript笔记之单例模式</title>
-      <link>http://www.useLessblog.cn/article/not-adding-global-scope.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/not-adding-global-scope.html</guid>
-      <pubDate>Fri, 11 Jul 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        <h3>什么是单例模式？</h3>
-
-<p>利用私有构造函数来保证只有一个实例，使不同的地方调用同一个实例对象。</p>
-
-<h3>单例模式最简单的例子：</h3>
-
-<pre><code>var Useless = {
-     name: "useless",
-     age: function() {
-       console.log("secret!");
-     }
-};
-Useless.age();
-</code></pre>
-
-<h3>闭包实现私有成员的单例模式例子：</h3>
-
-<pre><code>var Ellyliang = (function() {
-    var name = "useLess",
-        age  = function() {
-            console.log("secret!");
-        };
-
-    return {
-        getName: function() {
-            return name;
-        },
-        getAge: function() {
-            age();
-        }
-    }
-})();
-Ellyliang.getName();
-Ellyliang.getAge();
-</code></pre>
-
-<h3>闭包实现私有成员的惰性实例化单例模式:</h3>
-
-<pre><code>var Ellyliang = (function() {
-    var name = "useLess",
-        age = function() {
-            console.log("secret!");
-        };
-
-    var obj = {
-        getName: function(){
-            return name;
-        },
-        getAge: function(){
-            age();
-        }
-    };
-
-    function init(){
-        return obj;
-    }
-
-    return {
-        getInstace: init
-    };
-})();
-
-Ellyliang.getInstace().getAge();
-Ellyliang.getInstace().getAge();
-</code></pre>
-
-<p>NOTE: 适用场景－> 必须加载大量数据的单体知道需要使用它的时候才实例化。</p>
-
-<h3>笔记链接：</h3>
-
-<blockquote>
-  <ul>
-  <li><a href="http://www.cnblogs.com/snandy/archive/2011/04/07/2007717.html">http://www.cnblogs.com/snandy/archive/2011/04/07/2007717.html</a></li>
-  <li><a href="http://rolfzhang.com/articles/920.html">http://rolfzhang.com/articles/920.html</a></li>
-  </ul>
 </blockquote>
         ]]>
       </description>
