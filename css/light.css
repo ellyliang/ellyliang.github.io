@@ -150,7 +150,7 @@ header nav ul li a:hover {
 	letter-spacing: 0.1em;
 }
 #content #article p {
-	/*text-indent: 2.2em;*/
+	text-indent: 2.2em;
 	/*color: transparent;
 	 background: -webkit-linear-gradient(top,blue,pink,red,green,red);
 	 -webkit-background-clip: text;*/
