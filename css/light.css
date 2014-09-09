@@ -31,7 +31,7 @@ header {
 	background: #1b1b1b;
 }
 header #logo {
-	font-size: 48px;
+	font-size: 30px;
 	display: inline-block;
 }
 header #logo a{
@@ -150,7 +150,7 @@ header nav ul li a:hover {
 	letter-spacing: 0.1em;
 }
 #content #article p {
-	text-indent: 2.2em;
+	/*text-indent: 2.2em;*/
 	/*color: transparent;
 	 background: -webkit-linear-gradient(top,blue,pink,red,green,red);
 	 -webkit-background-clip: text;*/
@@ -356,10 +356,10 @@ header nav ul li a:hover {
 	line-height: 1.5;
 }
 #content #article h1 {
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 #content #article h2 {
-	font-size: 1.6em;
+	font-size: 1.2em;
 }
 #content #article h3 {
 	font-size: 1.4em;
