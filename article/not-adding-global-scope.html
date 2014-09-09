@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="useLess - 前端开发">
+    <meta name="keywords" content="useLess,web前端,前端,HTML,CSS,JavaScript,js,女程序媛">
+    <title>Javascript笔记之单例模式 - useLess[blog]</title>
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+    <!--link(rel="alternate", type="application/rss+xml", title="useLess'blog", href="#{basePath}/rss/rss.xml")-->
+    <link rel="stylesheet" href="../css/light.css">
+    <link rel="stylesheet" href="../js/prettify/prettify.css">
+    <script src="../js/prettify/prettify.js"></script>
+    <script src="../js/jquery/jquery-1.7.2.min.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><a href="../index.html">useLess[blog]</a><span class="subTitle">没有做不到的事，只有迈不出的坎！</span></div>
+      <nav>
+        <ul>
+          <li><a href="../">Index<br />首页</a></li>
+          <li><a href="../page/about.html">ABOUT 简介<br />ABOUT 简介</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+  <article id="container">
+    <section id="content">
+      <div id="article">
+        <div id="content-child">
+          <h1><span class="about-title">Javascript笔记之单例模式</span><em class="pubDate">2014-07-11 00:00:00</em></h1><h3>什么是单例模式？</h3>
+
+<p>利用私有构造函数来保证只有一个实例，使不同的地方调用同一个实例对象。</p>
+
+<h3>单例模式最简单的例子：</h3>
+
+<pre><code>var Useless = {
+     name: "useless",
+     age: function() {
+       console.log("secret!");
+     }
+};
+Useless.age();
+</code></pre>
+
+<h3>闭包实现私有成员的单例模式例子：</h3>
+
+<pre><code>var Ellyliang = (function() {
+    var name = "useLess",
+        age  = function() {
+            console.log("secret!");
+        };
+
+    return {
+        getName: function() {
+            return name;
+        },
+        getAge: function() {
+            age();
+        }
+    }
+})();
+Ellyliang.getName();
+Ellyliang.getAge();
+</code></pre>
+
+<h3>闭包实现私有成员的惰性实例化单例模式:</h3>
+
+<pre><code>var Ellyliang = (function() {
+    var name = "useLess",
+        age = function() {
+            console.log("secret!");
+        };
+
+    var obj = {
+        getName: function(){
+            return name;
+        },
+        getAge: function(){
+            age();
+        }
+    };
+
+    function init(){
+        return obj;
+    }
+
+    return {
+        getInstace: init
+    };
+})();
+
+Ellyliang.getInstace().getAge();
+Ellyliang.getInstace().getAge();
+</code></pre>
+
+<p>NOTE: 适用场景－> 必须加载大量数据的单体知道需要使用它的时候才实例化。</p>
+
+<h3>笔记链接：</h3>
+
+<blockquote>
+  <ul>
+  <li><a href="http://www.cnblogs.com/snandy/archive/2011/04/07/2007717.html">http://www.cnblogs.com/snandy/archive/2011/04/07/2007717.html</a></li>
+  <li><a href="http://rolfzhang.com/articles/920.html">http://rolfzhang.com/articles/920.html</a></li>
+  </ul>
+</blockquote>
+        </div>
+      </div>
+      <div class="ds-thread"></div>
+      <script>
+        var duoshuoQuery = {short_name:"useLess"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = 'http://static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+      <!--include ./include/sidebar-->
+    </section>
+    <div id="foot">
+      <p>Powered by <a href="https://github.com/TooBug/Toosolo" target="_blank">Solo</a></p>
+    </div>
+  </article>
+</html>
