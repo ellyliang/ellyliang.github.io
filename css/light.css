@@ -176,8 +176,8 @@ header nav ul li a:hover {
 }
 #sidebar p.avatar {
 	/*text-align: center;*/
-	top: 70px;
-	left: 593px;
+	top: 107px;
+	/*left: 235px;*/
 }
 #sidebar p.avatar img:hover {
 	-webkit-transform: rotate(360deg)scale(1.3);
