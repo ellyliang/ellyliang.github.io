@@ -4,8 +4,31 @@
     <title>useLess[博客]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Sat, 11 Oct 2014 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Nov 2014 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>Angularjs-Player</title>
+      <link>http://www.useLessblog.cn/article/ng-player.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/ng-player.html</guid>
+      <pubDate>Sat, 29 Nov 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>这个月的博客是用是Angularjs做的h5和c3的音乐播放器，做这个应用的目的是想学习下Angularjs,这个音乐播放器我目前只测过mac下的chrome，firefox和safari，至于其他的浏览器，还没有测，所以可能还存在问题，在后续有空的时候再去优化，同时改成兼容移动端的。哈哈，其实我比较想把它改成app。总而言之，这个不是最新版本的angularjs，同时里边的代码有很多不好之处，望高手指点，小女感激不尽！哈哈....</p>
+
+<p>此页面应用的代码放在coding上，如有兴趣的同行萌，可以从此查看：</p>
+
+<h3><a href="https://coding.net/u/useLess/p/Angularjs-Player/git">想看，点我呀！</a></h3>
+
+<h3><a href="http://www.uselessblog.cn/JQM-me/player/">想看演示效果？进来吧</a></h3>
+
+<p><img src="/images/demo.jpg" alt="book" title="" /></p>
+
+<h3>参考链接</h3>
+
+<p><a href="http://dengo.org/archives/1048">http://dengo.org/archives/1048</a></p>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>css3-展开与重叠</title>
       <link>http://www.useLessblog.cn/article/book.html</link>
