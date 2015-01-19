@@ -4,8 +4,25 @@
     <title>useLess[博客]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Sat, 29 Nov 2014 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2015 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>2014年总结，2015年计划</title>
+      <link>http://www.useLessblog.cn/article/2014total.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/2014total.html</guid>
+      <pubDate>Mon, 19 Jan 2015 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>2015年第一篇博客竟然是2014年的总结，哈哈。这个总结的页面是用fullpage.js做的，里边的动画是用css3实现的，自己觉得超人飞下来这个效果很萌，哈哈。</p>
+
+<p>2014年总结已在里边，2015年计划也在里边，希望自己能坚持把2015年的计划做完！</p>
+
+<h3><a href="http://www.uselessblog.cn/JQM-me/2014total/">想看我的总结与计划，请进！</a></h3>
+
+<p><img src="/images/total.png" alt="book" title="" /></p>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>Angularjs-Player</title>
       <link>http://www.useLessblog.cn/article/ng-player.html</link>
