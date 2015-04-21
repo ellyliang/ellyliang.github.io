@@ -17,8 +17,7 @@
 
 <h3>文件目录结构</h3>
 
-<p><code>
- .
+<pre><code> .
 ├── index.html
 └── static
     └── js
@@ -31,30 +30,26 @@
             ├── domReady.js
             ├── jquery.js
             └── require.js
-</code></p>
+</code></pre>
 
 <h3>index.html</h3>
 
-<p>```
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>简单requirejs&amp;ng的demo</title>
-    </head>
-    <body>
-        <div>
-            <input type="text" ng-model="name">
-            {{name || '柚子－use...'}}
-        </div></p>
-
-<pre><code>    &lt;script data-main="/static/js/lib/config.js" src="/static/js/lib/require.js"&gt;&lt;/script&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;简单requirejs&amp;ng的demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;input type="text" ng-model="name"&gt;
+        {{name || '柚子－use...'}}
+    &lt;/div&gt;
+    &lt;script data-main="/static/js/lib/config.js" src="/static/js/lib/require.js"&gt;&lt;/script&gt;
     &lt;script src="/static/js/bookStoreMain.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-
-<p>```</p>
 
 <blockquote>
   <p>Note:  <code>data-main</code>是requirejs引入模块的路径</p>
@@ -62,51 +57,48 @@
 
 <h3>app.js</h3>
 
-<p><code>
-    define([
-        'angular',
-        'ngRoute'
-    ], function(angular, ngRoute) {
-        var app = angular.module('bookStore', ['ngRoute']);
-        return app;
-    });
-</code></p>
+<pre><code>define([
+    'angular',
+    'ngRoute'
+], function(angular, ngRoute) {
+    var app = angular.module('bookStore', ['ngRoute']);
+    return app;
+});
+</code></pre>
 
 <h3>config.js</h3>
 
-<p><code>
-    require.config({
-        paths : {
-            "angular" : "angular",
-            "domReady" : "domReady",
-            "ngRoute" : "angular-route",
-            "jquery" : "jquery",
-            "app" : "app"
+<pre><code>require.config({
+    paths : {
+        "angular" : "angular",
+        "domReady" : "domReady",
+        "ngRoute" : "angular-route",
+        "jquery" : "jquery",
+        "app" : "app"
+    },
+    shim : {
+        'angular' : {
+            'exports' : 'angular'
         },
-        shim : {
-            'angular' : {
-                'exports' : 'angular'
-            },
-            'ngRoute' : ['angular'],
-            'app' : {
-                'exports' : 'app'
-            }
+        'ngRoute' : ['angular'],
+        'app' : {
+            'exports' : 'app'
         }
-    });
-</code></p>
+    }
+});
+</code></pre>
 
 <h3>bookStoreMain.js</h3>
 
-<p><code>
-    require([
-        'angular',
-        'domReady!', 
-        'jquery',
-        'app'
-        ], function(angular, document, jquery, app) {
-        angular.bootstrap(document.body, ["bookStore"]);
-    });
-</code></p>
+<pre><code>require([
+    'angular',
+    'domReady!', 
+    'jquery',
+    'app'
+    ], function(angular, document, jquery, app) {
+    angular.bootstrap(document.body, ["bookStore"]);
+});
+</code></pre>
 
 <h3>参考链接</h3>
 
