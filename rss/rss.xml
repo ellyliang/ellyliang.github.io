@@ -4,8 +4,118 @@
     <title>useLess[博客]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Mon, 19 Jan 2015 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2015 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>requireJs&amp;angularjs很简单的一个demo</title>
+      <link>http://www.useLessblog.cn/article/requirejs&amp;angularjs.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/requirejs&amp;angularjs.html</guid>
+      <pubDate>Mon, 20 Apr 2015 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>原本计划每个月写篇博客的计划泡汤了...被各种找工作，换工作，换地方，找房子等等给忙疯。哈哈哈哈哈，不过都是借口，一个字就是懒！下边是requireJS与AngularJS结合使用的很简单的demo。也是我要开始做一个东西简单搭建的代码，能跑得通。哈哈，这里文件夹分的没有很细，建的也不好，命名也不怎么样。这篇博客只放代码，不做讲解，因为我也没有很懂。这里写的js文件有三个，bookStoreMain.js、app.js、config.js，其他的js文件请自行下载。大家看到不明白的请自行google。有好的demo分享出来哈，一起学习！哈哈！等我把东西做完了再一起放到coding || github上，希望自己能坚持！！！！</p>
+
+<h3>文件目录结构</h3>
+
+<p><code>
+ .
+├── index.html
+└── static
+    └── js
+        ├── bookStoreMain.js
+        └── lib
+            ├── angular-route.js
+            ├── angular.js
+            ├── app.js
+            ├── config.js
+            ├── domReady.js
+            ├── jquery.js
+            └── require.js
+</code></p>
+
+<h3>index.html</h3>
+
+<p>```
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>简单requirejs&amp;ng的demo</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" ng-model="name">
+            {{name || '柚子－use...'}}
+        </div></p>
+
+<pre><code>    &lt;script data-main="/static/js/lib/config.js" src="/static/js/lib/require.js"&gt;&lt;/script&gt;
+    &lt;script src="/static/js/bookStoreMain.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>```</p>
+
+<blockquote>
+  <p>Note:  <code>data-main</code>是requirejs引入模块的路径</p>
+</blockquote>
+
+<h3>app.js</h3>
+
+<p><code>
+    define([
+        'angular',
+        'ngRoute'
+    ], function(angular, ngRoute) {
+        var app = angular.module('bookStore', ['ngRoute']);
+        return app;
+    });
+</code></p>
+
+<h3>config.js</h3>
+
+<p><code>
+    require.config({
+        paths : {
+            "angular" : "angular",
+            "domReady" : "domReady",
+            "ngRoute" : "angular-route",
+            "jquery" : "jquery",
+            "app" : "app"
+        },
+        shim : {
+            'angular' : {
+                'exports' : 'angular'
+            },
+            'ngRoute' : ['angular'],
+            'app' : {
+                'exports' : 'app'
+            }
+        }
+    });
+</code></p>
+
+<h3>bookStoreMain.js</h3>
+
+<p><code>
+    require([
+        'angular',
+        'domReady!', 
+        'jquery',
+        'app'
+        ], function(angular, document, jquery, app) {
+        angular.bootstrap(document.body, ["bookStore"]);
+    });
+</code></p>
+
+<h3>参考链接</h3>
+
+<p><a href="http://www.w3cschool.cc/w3cnote/requirejs-tutorial-1.html">requireJs</a></p>
+
+<p><a href="http://www.sosge.com/a7924.html">http://www.sosge.com/a7924.html</a></p>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>2014年总结，2015年计划</title>
       <link>http://www.useLessblog.cn/article/2014total.html</link>
@@ -24,6 +134,29 @@
 <p><img src="/images/qrcode.png" alt="qrcode" title="" /></p>
 
 <p><img src="/images/total.png" alt="total" title="" /></p>
+        ]]>
+      </description>
+    </item>
+    <item>
+      <title>Angularjs-Player</title>
+      <link>http://www.useLessblog.cn/article/backbone笔记一.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/backbone笔记一.html</guid>
+      <pubDate>Sat, 29 Nov 2014 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>这个月的博客是用是Angularjs做的h5和c3的音乐播放器，做这个应用的目的是想学习下Angularjs,这个音乐播放器我目前只测过mac下的chrome，firefox和safari，至于其他的浏览器，还没有测，所以可能还存在问题，在后续有空的时候再去优化，同时改成兼容移动端的。哈哈，其实我比较想把它改成app。总而言之，这个不是最新版本的angularjs，同时里边的代码有很多不好之处，望高手指点，小女感激不尽！哈哈....</p>
+
+<p>此页面应用的代码放在coding上，如有兴趣的同行萌，可以从此查看：</p>
+
+<h3><a href="https://coding.net/u/useLess/p/Angularjs-Player/git">想看，点我呀！</a></h3>
+
+<h3><a href="http://www.uselessblog.cn/JQM-me/player/">想看演示效果？进来吧</a></h3>
+
+<p><img src="/images/demo.jpg" alt="book" title="" /></p>
+
+<h3>参考链接</h3>
+
+<p><a href="http://dengo.org/archives/1048">http://dengo.org/archives/1048</a></p>
         ]]>
       </description>
     </item>
