@@ -4,8 +4,105 @@
     <title>useLess[博客]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Mon, 20 Apr 2015 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2015 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>React Player（柚子音乐播放器）</title>
+      <link>http://www.useLessblog.cn/article/react-player.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/react-player.html</guid>
+      <pubDate>Tue, 21 Jul 2015 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>好久没有写博客了，近期react很火，所以跟风的我就用react写了一个移动端的播放器。写这个播放器的目的也是对react的入门，本篇的博客主要说下遇到的问题，如果想知道播放器是怎么在本地运行起来的，可以到coding上下载代码（为了拿码币我也是拼了，把代码都放coding上了），链接在这：<a href="https://coding.net/u/useLess/p/react-player/git">柚子音乐播放器源码－Coding</a>。嗯，这个简单的播放器，没有播放模式，只有播放，停止，上一首，下一首，别问我为什么，因为我不懂，哈哈。还有还有，不排除很容易出bug，还是不要问我为什么，因为代码有bug避免不了，更何况我没怎么测试，哈哈，废话不说了。请用手机扫描下，体验下吧。</p>
+
+<p><img src="/images/music.png" alt="柚子音乐播放器" title="" /></p>
+
+<h3>结构介绍：（首页忽略）</h3>
+
+<p><img src="/images/music01.jpg" alt="柚子音乐播放器" title="" /></p>
+
+<p>如上图所示，<Music />为parent,<MusicButton />、<List />、<Footer />为child,事实上还有一个<Audio />，只是它不需要展示，放到哪里都可以，但是我把它放到child里边。</p>
+
+<h4>在做播放器的过程中，我遇到了2个问题：</h4>
+
+<p>1、一个是怎么把child component的值传给parent component，然后parent component再传给另一个child component。经过各种询问和查文档，终于找到答案了。</p>
+
+<p>解决的方法就是使用回调, 以下是回调的例子。</p>
+
+<p>```
+    var React = require('react');</p>
+
+<pre><code>var A = React.createClass({
+    getInitialState : function() {
+        return {
+            isShow : true
+        };
+    },
+    clickChild : function() {  
+        if(this.state.isShow) {
+            this.setState({isShow : false});
+        } else {
+            this.setState({isShow : true});
+        }
+        setTimeout(function() {
+            this.props.clickParent(this.state.isShow); //回调。把this.state.isShow的值传给parent
+        }.bind(this), 0);
+    },
+    render : function() {
+        return (
+            &lt;div onClick={this.clickChild}&gt;我是a&lt;/div&gt;
+        );
+    }
+});
+
+var B = React.createClass({
+    render : function() {
+        return (
+            &lt;div className={this.props.className}&gt;我是b&lt;/div&gt; //通过this.props.className去拿值
+        );
+    }
+});
+
+var C = React.createClass({
+    getInitialState : function() {
+        return {
+            isShow : false,
+            style : 'hideStyle'
+        };
+    },
+    clickParent : function(n) {
+        this.setState({isShow: n});
+        setTimeout(function() {
+            if(this.state.isShow) {
+                this.setState({style : 'hideStyle'});
+            } else {
+                this.setState({style : 'showStyle'});
+            }
+        }.bind(this), 0);
+    },
+    render : function() {
+        return (
+            &lt;div&gt;
+                &lt;A clickParent={this.clickParent} /&gt;
+                &lt;B className={this.state.style} /&gt;
+            &lt;/div&gt;
+        );
+    }
+});
+
+React.render(&lt;C /&gt;, document.body);
+</code></pre>
+
+<p>```</p>
+
+<p>2、当我定义this.setState({xxx : xxx});的时候，突然发现我获取不了值或是执行不了某些东西，然后又经过各种查找跟尝试，我发现setTimeout(function() {}, 0);好好用。但是我不知道是为什么，或许是渲染的问题。</p>
+
+<h3>总结</h3>
+
+<p>呃，总结想了很久，不知道写什么，说用了react的感想嘛，但是自己也没有接触多少，就简单的用了下，说react好不好用嘛，我也不知道，因为到现在我没了解它，也没有懂它，只是做了个简单的栗子，简单的入了个门，当然，这只是我react的开始，哈哈，给自己加油，就到这吧。</p>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>requireJs&amp;angularjs很简单的一个demo</title>
       <link>http://www.useLessblog.cn/article/requirejs&amp;angularjs.html</link>
@@ -126,29 +223,6 @@
 <p><img src="/images/qrcode.png" alt="qrcode" title="" /></p>
 
 <p><img src="/images/total.png" alt="total" title="" /></p>
-        ]]>
-      </description>
-    </item>
-    <item>
-      <title>Angularjs-Player</title>
-      <link>http://www.useLessblog.cn/article/backbone笔记一.html</link>
-      <guid isPermaLink="true">http://www.useLessblog.cn/article/backbone笔记一.html</guid>
-      <pubDate>Sat, 29 Nov 2014 00:00:00 +0800</pubDate>
-      <description>
-        <![CDATA[
-        <p>这个月的博客是用是Angularjs做的h5和c3的音乐播放器，做这个应用的目的是想学习下Angularjs,这个音乐播放器我目前只测过mac下的chrome，firefox和safari，至于其他的浏览器，还没有测，所以可能还存在问题，在后续有空的时候再去优化，同时改成兼容移动端的。哈哈，其实我比较想把它改成app。总而言之，这个不是最新版本的angularjs，同时里边的代码有很多不好之处，望高手指点，小女感激不尽！哈哈....</p>
-
-<p>此页面应用的代码放在coding上，如有兴趣的同行萌，可以从此查看：</p>
-
-<h3><a href="https://coding.net/u/useLess/p/Angularjs-Player/git">想看，点我呀！</a></h3>
-
-<h3><a href="http://www.uselessblog.cn/JQM-me/player/">想看演示效果？进来吧</a></h3>
-
-<p><img src="/images/demo.jpg" alt="book" title="" /></p>
-
-<h3>参考链接</h3>
-
-<p><a href="http://dengo.org/archives/1048">http://dengo.org/archives/1048</a></p>
         ]]>
       </description>
     </item>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="useLess - 前端开发">
+    <meta name="keywords" content="useLess,web前端,前端,HTML,CSS,JavaScript,js,程序媛">
+    <title>React Player（柚子音乐播放器） - useLess[博客]</title>
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+    <!--link(rel="alternate", type="application/rss+xml", title="useLess'blog", href="#{basePath}/rss/rss.xml")-->
+    <link rel="stylesheet" href="../css/light.css">
+    <link rel="stylesheet" href="../js/prettify/prettify.css">
+    <script src="../js/prettify/prettify.js"></script>
+    <script src="../js/jquery/jquery-1.7.2.min.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><a href="../index.html">useLess[博客]</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../">Index<br />首页</a></li>
+          <li><a href="../page/about.html">ABOUT 简介<br />ABOUT 简介</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+  <article id="container">
+    <section id="content">
+      <div id="article">
+        <div id="content-child">
+          <h1><span class="about-title">React Player（柚子音乐播放器）</span><em class="pubDate">2015-07-21 00:00:00</em></h1><p>好久没有写博客了，近期react很火，所以跟风的我就用react写了一个移动端的播放器。写这个播放器的目的也是对react的入门，本篇的博客主要说下遇到的问题，如果想知道播放器是怎么在本地运行起来的，可以到coding上下载代码（为了拿码币我也是拼了，把代码都放coding上了），链接在这：<a href="https://coding.net/u/useLess/p/react-player/git">柚子音乐播放器源码－Coding</a>。嗯，这个简单的播放器，没有播放模式，只有播放，停止，上一首，下一首，别问我为什么，因为我不懂，哈哈。还有还有，不排除很容易出bug，还是不要问我为什么，因为代码有bug避免不了，更何况我没怎么测试，哈哈，废话不说了。请用手机扫描下，体验下吧。</p>
+
+<p><img src="/images/music.png" alt="柚子音乐播放器" title="" /></p>
+
+<h3>结构介绍：（首页忽略）</h3>
+
+<p><img src="/images/music01.jpg" alt="柚子音乐播放器" title="" /></p>
+
+<p>如上图所示，<Music />为parent,<MusicButton />、<List />、<Footer />为child,事实上还有一个<Audio />，只是它不需要展示，放到哪里都可以，但是我把它放到child里边。</p>
+
+<h4>在做播放器的过程中，我遇到了2个问题：</h4>
+
+<p>1、一个是怎么把child component的值传给parent component，然后parent component再传给另一个child component。经过各种询问和查文档，终于找到答案了。</p>
+
+<p>解决的方法就是使用回调, 以下是回调的例子。</p>
+
+<p>```
+    var React = require('react');</p>
+
+<pre><code>var A = React.createClass({
+    getInitialState : function() {
+        return {
+            isShow : true
+        };
+    },
+    clickChild : function() {  
+        if(this.state.isShow) {
+            this.setState({isShow : false});
+        } else {
+            this.setState({isShow : true});
+        }
+        setTimeout(function() {
+            this.props.clickParent(this.state.isShow); //回调。把this.state.isShow的值传给parent
+        }.bind(this), 0);
+    },
+    render : function() {
+        return (
+            &lt;div onClick={this.clickChild}&gt;我是a&lt;/div&gt;
+        );
+    }
+});
+
+var B = React.createClass({
+    render : function() {
+        return (
+            &lt;div className={this.props.className}&gt;我是b&lt;/div&gt; //通过this.props.className去拿值
+        );
+    }
+});
+
+var C = React.createClass({
+    getInitialState : function() {
+        return {
+            isShow : false,
+            style : 'hideStyle'
+        };
+    },
+    clickParent : function(n) {
+        this.setState({isShow: n});
+        setTimeout(function() {
+            if(this.state.isShow) {
+                this.setState({style : 'hideStyle'});
+            } else {
+                this.setState({style : 'showStyle'});
+            }
+        }.bind(this), 0);
+    },
+    render : function() {
+        return (
+            &lt;div&gt;
+                &lt;A clickParent={this.clickParent} /&gt;
+                &lt;B className={this.state.style} /&gt;
+            &lt;/div&gt;
+        );
+    }
+});
+
+React.render(&lt;C /&gt;, document.body);
+</code></pre>
+
+<p>```</p>
+
+<p>2、当我定义this.setState({xxx : xxx});的时候，突然发现我获取不了值或是执行不了某些东西，然后又经过各种查找跟尝试，我发现setTimeout(function() {}, 0);好好用。但是我不知道是为什么，或许是渲染的问题。</p>
+
+<h3>总结</h3>
+
+<p>呃，总结想了很久，不知道写什么，说用了react的感想嘛，但是自己也没有接触多少，就简单的用了下，说react好不好用嘛，我也不知道，因为到现在我没了解它，也没有懂它，只是做了个简单的栗子，简单的入了个门，当然，这只是我react的开始，哈哈，给自己加油，就到这吧。</p>
+        </div>
+      </div>
+      <div class="ds-thread"></div>
+      <script>
+        var duoshuoQuery = {short_name:"useLess"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = 'http://static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+      <!--include ./include/sidebar-->
+    </section>
+    <div id="foot">
+      <p>Powered by <a href="https://github.com/TooBug/Toosolo" target="_blank">Solo</a></p>
+    </div>
+  </article>
+</html>
