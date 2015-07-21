@@ -29,10 +29,9 @@
 
 <p>解决的方法就是使用回调, 以下是回调的例子。</p>
 
-<p>```
-    var React = require('react');</p>
+<pre><code>var React = require('react');
 
-<pre><code>var A = React.createClass({
+var A = React.createClass({
     getInitialState : function() {
         return {
             isShow : true
@@ -92,8 +91,6 @@ var C = React.createClass({
 
 React.render(&lt;C /&gt;, document.body);
 </code></pre>
-
-<p>```</p>
 
 <p>2、当我定义<code>this.setState({xxx : xxx});</code>的时候，突然发现我获取不了值或是执行不了某些东西，然后又经过各种查找跟尝试，我发现<code>setTimeout(function() {}, 0);</code>好好用。但是我不知道是为什么，或许是渲染的问题。</p>
 
