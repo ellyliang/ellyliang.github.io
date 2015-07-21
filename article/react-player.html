@@ -37,7 +37,7 @@
 
 <p><img src="/images/music01.jpg" alt="柚子音乐播放器" title="" /></p>
 
-<p>如上图所示，<Music />为parent,<MusicButton />、<List />、<Footer />为child,事实上还有一个<Audio />，只是它不需要展示，放到哪里都可以，但是我把它放到child里边。</p>
+<p>如上图所示，<code>&lt;Music /&gt;</code>为parent,<code>&lt;MusicButton /&gt;</code>、<code>&lt;List /&gt;</code>、<code>&lt;Footer /&gt;</code>为child,事实上还有一个<code>&lt;Audio /&gt;</code>，只是它不需要展示，放到哪里都可以，但是我把它放到child里边。</p>
 
 <h3>在做播放器的过程中，我遇到了2个问题：</h3>
 
@@ -111,7 +111,7 @@ React.render(&lt;C /&gt;, document.body);
 
 <p>```</p>
 
-<p>2、当我定义this.setState({xxx : xxx});的时候，突然发现我获取不了值或是执行不了某些东西，然后又经过各种查找跟尝试，我发现setTimeout(function() {}, 0);好好用。但是我不知道是为什么，或许是渲染的问题。</p>
+<p>2、当我定义<code>this.setState({xxx : xxx});</code>的时候，突然发现我获取不了值或是执行不了某些东西，然后又经过各种查找跟尝试，我发现<code>setTimeout(function() {}, 0);</code>好好用。但是我不知道是为什么，或许是渲染的问题。</p>
 
 <h3>总结</h3>
 
