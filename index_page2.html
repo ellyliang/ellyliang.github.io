@@ -42,6 +42,14 @@
     <section id="content">
       <div id="article">
         <div class="indexarticle">
+          <h1><a href="./article/book.html">css3-展开与重叠</a><em class="pubDate">2014-10-11</em></h1><p>国庆之后，偶挺有空，趁着有空之际，偶用css3实现了一个展开与重叠的效果，通过这个效果，我对css3又了解了多点。这里面用的css3不多，就用了，transition和transform。如果对里面的代码感兴趣，请点击下面的链接，不过相信你一看就知道怎么实现的！哈哈哈哈.....</p>
+
+<h3>页面载入是这样的：</h3>
+
+<p><img src="/images/book1.png" alt="book" title="" /></p>
+          <div class="articlemore"><a href="./article/book.html">继续阅读</a></div>
+        </div>
+        <div class="indexarticle">
           <h1><a href="./article/not-adding-global-scope.html">译文：确保不在javascript中增加全局作用域</a><em class="pubDate">2014-09-09</em></h1><p>写javascript代码最好的做法是避免把对象放到全局作用域中。有几个很好的理由来解释全局变量会增加耦合（globals add coupling），例如，分开不同库的时候，很容易破坏彼此。事实上，通常程序的规则是避免增加全局作用域。遗憾的是，javascript增加对象到全局作用域中是非常容易的事情。参考以下这段代码：</p>
 
 <pre><code>function sayHello(person)
@@ -83,21 +91,6 @@ Useless.age();
 
 <p><img src="/images/snail.png" alt="Snail" title="" />;</p>
           <div class="articlemore"><a href="./article/snail.html">继续阅读</a></div>
-        </div>
-        <div class="indexarticle">
-          <h1><a href="./article/scoping&amp;hoisting.html">Javascript作用域&amp;提升-笔记</a><em class="pubDate">2014-04-26</em></h1><p>为什么第一个会报错，而第二个没报错，你造吗？不造？好的，接下来我们就一起学习以下的笔记，学完之后你就造了！哈哈......</p>
-
-<pre><code>useLess();  //TypeError: undefined is not a function
-var useLess = function(){
-    alert(2);
-};
-
-useLess(); //2
-function useLess(){
-    alert(2);
-}
-</code></pre>
-          <div class="articlemore"><a href="./article/scoping&amp;hoisting.html">继续阅读</a></div>
         </div>
         <div id="pagination"><a href="index.html">1</a><a href="index_page2.html">2</a><a href="index_page3.html">3</a>
         </div>

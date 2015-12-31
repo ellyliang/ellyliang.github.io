@@ -4,8 +4,39 @@
     <title>useLess[博客]</title>
     <link>http://www.useLessblog.cn</link>
     <description>useLess - 前端开发</description>
-    <lastBuildDate>Tue, 21 Jul 2015 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2015 00:00:00 +0800</lastBuildDate>
     <generator>Solo 2.0</generator>
+    <item>
+      <title>2015年总结（升级版柚子音乐播放器）</title>
+      <link>http://www.useLessblog.cn/article/newPlayer.html</link>
+      <guid isPermaLink="true">http://www.useLessblog.cn/article/newPlayer.html</guid>
+      <pubDate>Thu, 31 Dec 2015 00:00:00 +0800</pubDate>
+      <description>
+        <![CDATA[
+        <p>终于在2015的最后一天把音乐播放器重构完了，顺便附上自己的总结。这次重构用了webpack+gulp, es6, sass, react-router..., 感觉上次好了点，恩，为了过节，其他总结我也不写了，早点写完，早点肥家...</p>
+
+<p>体验下吧！</p>
+
+<p><img src="/images/music02.png" alt="柚子音乐播放器" title="" /></p>
+
+<h4>源码链接：</h4>
+
+<blockquote>
+  <ul>
+  <li><a href="https://github.com/ellyliang/JQM-me/tree/gh-pages/newPlayer">新版柚子播放器源码</a></li>
+  </ul>
+</blockquote>
+
+<h4>遇到的问题：</h4>
+
+<blockquote>
+  <ul>
+  <li><a href="http://stackoverflow.com/questions/34544314/setstate-can-only-update-a-mounted-or-mounting-component-this-usually-mea/34544654#34544654">http://stackoverflow.com/questions/34544314/setstate-can-only-update-a-mounted-or-mounting-component-this-usually-mea/34544654#34544654</a></li>
+  </ul>
+</blockquote>
+        ]]>
+      </description>
+    </item>
     <item>
       <title>React Player（柚子音乐播放器）</title>
       <link>http://www.useLessblog.cn/article/react-player.html</link>
